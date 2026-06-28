@@ -1,0 +1,9 @@
+tmp/
+__MACOSX/
+.DS_Store
+assets/.DS_Store
+assets/**/.DS_Store
+assets/music/pirate.mp4
+assets/Brawl Stars/kaze.mp4
+assets/Brawl Stars/kenji.mp4
+assets/Brawl Stars/mandi gem.mp4
