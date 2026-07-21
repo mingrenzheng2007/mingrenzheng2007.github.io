@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ALLEN ZHENG | HPC &amp; ENVIRONMENT</title>
+    <meta name="description" content="A visual summary of Allen Zheng's HiMCM research on high-performance computing, energy use, and carbon emissions.">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body class="himcm-page">
+    <header class="site-header over-media">
+      <a class="brand" href="index.html">ALLEN ZHENG</a>
+      <nav class="site-nav" aria-label="Primary navigation">
+        <a href="index.html">HOME</a>
+        <a class="active" href="academic.html">Academic &amp; Research</a>
+        <a href="athletic.html">Athletic</a>
+        <a href="game.html">Game</a>
+        <a href="art.html">Art</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="himcm-hero" aria-labelledby="himcm-title">
+        <img src="assets/research/backgrounds/hpc-environment-hero.jpg" alt="Renewable-energy island powering a submerged high-performance computing center">
+        <div class="himcm-overlay" aria-hidden="true"></div>
+        <div class="himcm-hero-copy">
+          <p class="himcm-eyebrow">HiMCM 2024 &middot; Outstanding Paper</p>
+          <h1 id="himcm-title">The Environmental Cost of Computing</h1>
+          <p>A data-driven model of how high-performance computing changes global energy demand, carbon emissions, and community access to electricity through 2030.</p>
+        </div>
+      </section>
+
+      <section class="himcm-summary" aria-labelledby="results-heading">
+        <div class="himcm-inner">
+          <header class="himcm-heading">
+            <p class="himcm-label">Key findings</p>
+            <h2 id="results-heading">Three numbers frame the challenge.</h2>
+          </header>
+
+          <div class="himcm-stat-grid">
+            <article class="himcm-stat">
+              <p class="himcm-stat-label">Annual average energy use</p>
+              <p class="himcm-stat-value">69&ndash;144M</p>
+              <p>MWh of estimated global HPC consumption at current utilization levels.</p>
+            </article>
+            <article class="himcm-stat">
+              <p class="himcm-stat-label">Projected 2030 emissions</p>
+              <p class="himcm-stat-value">818&ndash;1,054M</p>
+              <p>Metric tons of CO<sub>2</sub> across the model's minimum and maximum forecasts.</p>
+            </article>
+            <article class="himcm-stat">
+              <p class="himcm-stat-label">Cleaner 2030 energy mix</p>
+              <p class="himcm-stat-value">77% lower</p>
+              <p>With generation shifted to 60% renewables and 20% nuclear power.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="himcm-data-section" aria-labelledby="forecast-heading">
+        <div class="himcm-inner">
+          <header class="himcm-heading">
+            <p class="himcm-label">Forecast / 2024&ndash;2030</p>
+            <h2 id="forecast-heading">Carbon emissions accelerate with computing demand.</h2>
+            <p>The shaded range captures model uncertainty. Even the lowest 2030 estimate is more than ten times the 2024 baseline.</p>
+          </header>
+
+          <figure class="himcm-forecast-figure">
+            <svg class="himcm-forecast-chart" viewBox="0 0 820 400" role="img" aria-labelledby="forecast-chart-title forecast-chart-description">
+              <title id="forecast-chart-title">HPC carbon emissions forecast from 2024 to 2030</title>
+              <desc id="forecast-chart-description">Average emissions rise from 65 million metric tons in 2024 to 940 million in 2030. The 2030 range is 818 to 1054 million metric tons.</desc>
+
+              <g class="himcm-chart-grid">
+                <line x1="70" y1="320" x2="750" y2="320"></line>
+                <line x1="70" y1="258" x2="750" y2="258"></line>
+                <line x1="70" y1="196" x2="750" y2="196"></line>
+                <line x1="70" y1="134" x2="750" y2="134"></line>
+                <line x1="70" y1="72" x2="750" y2="72"></line>
+              </g>
+
+              <g class="himcm-chart-axis">
+                <line x1="70" y1="44" x2="70" y2="320"></line>
+                <line x1="70" y1="320" x2="750" y2="320"></line>
+              </g>
+
+              <g class="himcm-chart-ticks">
+                <text x="56" y="325" text-anchor="end">0</text>
+                <text x="56" y="263" text-anchor="end">250</text>
+                <text x="56" y="201" text-anchor="end">500</text>
+                <text x="56" y="139" text-anchor="end">750</text>
+                <text x="56" y="77" text-anchor="end">1,000</text>
+                <text x="70" y="354" text-anchor="middle">2024</text>
+                <text x="183" y="354" text-anchor="middle">2025</text>
+                <text x="297" y="354" text-anchor="middle">2026</text>
+                <text x="410" y="354" text-anchor="middle">2027</text>
+                <text x="523" y="354" text-anchor="middle">2028</text>
+                <text x="637" y="354" text-anchor="middle">2029</text>
+                <text x="750" y="354" text-anchor="middle">2030</text>
+                <text x="70" y="24">Million metric tons CO2</text>
+              </g>
+
+              <path class="himcm-range-fill" d="M70 302 L183 290 L297 272 L410 246 L523 206 L637 148 L750 59 L750 117 L637 186 L523 231 L410 261 L297 283 L183 296 L70 306 Z"></path>
+              <path class="himcm-range-line" d="M70 302 L183 290 L297 272 L410 246 L523 206 L637 148 L750 59"></path>
+              <path class="himcm-range-line" d="M70 306 L183 296 L297 283 L410 261 L523 231 L637 186 L750 117"></path>
+              <path class="himcm-average-line" d="M70 304 L183 293 L297 278 L410 253 L523 218 L637 166 L750 87"></path>
+
+              <g class="himcm-average-points">
+                <circle cx="70" cy="304" r="5"></circle>
+                <circle cx="183" cy="293" r="5"></circle>
+                <circle cx="297" cy="278" r="5"></circle>
+                <circle cx="410" cy="253" r="5"></circle>
+                <circle cx="523" cy="218" r="5"></circle>
+                <circle cx="637" cy="166" r="5"></circle>
+                <circle cx="750" cy="87" r="6"></circle>
+              </g>
+
+              <g class="himcm-chart-annotations">
+                <text x="730" y="49" text-anchor="end">1,054M maximum</text>
+                <text x="730" y="83" text-anchor="end">940M average</text>
+                <text x="730" y="127" text-anchor="end">818M minimum</text>
+              </g>
+            </svg>
+
+            <div class="himcm-mobile-forecast" role="img" aria-label="Average HPC carbon emissions rise from 65 million metric tons in 2024 to 940 million in 2030">
+              <div class="himcm-mobile-row"><span>2024</span><span class="himcm-mobile-track"><span style="width: 7%"></span></span><strong>65M</strong></div>
+              <div class="himcm-mobile-row"><span>2025</span><span class="himcm-mobile-track"><span style="width: 12%"></span></span><strong>110M</strong></div>
+              <div class="himcm-mobile-row"><span>2026</span><span class="himcm-mobile-track"><span style="width: 18%"></span></span><strong>170M</strong></div>
+              <div class="himcm-mobile-row"><span>2027</span><span class="himcm-mobile-track"><span style="width: 29%"></span></span><strong>270M</strong></div>
+              <div class="himcm-mobile-row"><span>2028</span><span class="himcm-mobile-track"><span style="width: 44%"></span></span><strong>410M</strong></div>
+              <div class="himcm-mobile-row"><span>2029</span><span class="himcm-mobile-track"><span style="width: 66%"></span></span><strong>620M</strong></div>
+              <div class="himcm-mobile-row"><span>2030</span><span class="himcm-mobile-track"><span style="width: 100%"></span></span><strong>940M</strong></div>
+              <p>2030 model range: 818&ndash;1,054M metric tons CO<sub>2</sub></p>
+            </div>
+
+            <figcaption class="himcm-chart-legend">
+              <span><i class="himcm-legend-average" aria-hidden="true"></i>Average forecast</span>
+              <span><i class="himcm-legend-range" aria-hidden="true"></i>Minimum&ndash;maximum range</span>
+            </figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="himcm-scenario" aria-labelledby="scenario-heading">
+        <div class="himcm-inner himcm-scenario-grid">
+          <div>
+            <p class="himcm-label">2030 intervention scenario</p>
+            <h2 id="scenario-heading">Changing the energy mix changes the outcome.</h2>
+            <p>When 60% of generation comes from renewables and 20% from nuclear power, the model estimates a 77% reduction in HPC-related carbon emissions.</p>
+
+            <div class="himcm-mix-bar" role="img" aria-label="Energy mix scenario: 60 percent renewable, 20 percent nuclear, and 20 percent fossil energy">
+              <span class="himcm-mix-renewable"></span>
+              <span class="himcm-mix-nuclear"></span>
+              <span class="himcm-mix-fossil"></span>
+            </div>
+            <div class="himcm-mix-legend">
+              <span><i class="himcm-mix-renewable" aria-hidden="true"></i>60% renewable</span>
+              <span><i class="himcm-mix-nuclear" aria-hidden="true"></i>20% nuclear</span>
+              <span><i class="himcm-mix-fossil" aria-hidden="true"></i>20% fossil</span>
+            </div>
+          </div>
+
+          <svg class="himcm-reduction-ring" viewBox="0 0 260 260" role="img" aria-labelledby="reduction-title reduction-description">
+            <title id="reduction-title">Modeled carbon reduction</title>
+            <desc id="reduction-description">The selected 2030 energy mix reduces modeled carbon emissions by 77 percent.</desc>
+            <circle class="himcm-ring-track" cx="130" cy="130" r="76"></circle>
+            <circle class="himcm-ring-value" cx="130" cy="130" r="76"></circle>
+            <text class="himcm-ring-number" x="130" y="126">77%</text>
+            <text class="himcm-ring-label" x="130" y="154">lower emissions</text>
+          </svg>
+        </div>
+      </section>
+
+      <section class="himcm-community" aria-labelledby="community-heading">
+        <div class="himcm-inner">
+          <header class="himcm-heading">
+            <p class="himcm-label">Community impact</p>
+            <h2 id="community-heading">Computing growth can compete with local energy access.</h2>
+            <p>Without regional grid upgrades, the model predicts a steep decline in the maximum electricity available to nearby residents and businesses.</p>
+          </header>
+
+          <div class="himcm-timeline" role="img" aria-label="Community energy access is 100 percent in 2024, below 80 percent by 2028, and below 40 percent by 2030">
+            <article>
+              <p class="himcm-timeline-year">2024</p>
+              <h3>100% baseline</h3>
+              <p>Community access before the projected HPC load increase.</p>
+            </article>
+            <article>
+              <p class="himcm-timeline-year">2028</p>
+              <h3>Below 80%</h3>
+              <p>The first major threshold identified by the model.</p>
+            </article>
+            <article>
+              <p class="himcm-timeline-year">2030</p>
+              <h3>Below 40%</h3>
+              <p>A severe constraint on households and local businesses.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="himcm-solutions" aria-labelledby="solutions-heading">
+        <div class="himcm-inner">
+          <header class="himcm-heading">
+            <p class="himcm-label">From model to action</p>
+            <h2 id="solutions-heading">A pathway toward ocean-linked green computing.</h2>
+          </header>
+
+          <div class="himcm-solution-grid">
+            <article>
+              <p class="himcm-solution-number">01</p>
+              <h3>Relocate strategically</h3>
+              <p>Use electricity-price incentives to place HPC centers near island and offshore renewable resources.</p>
+            </article>
+            <article>
+              <p class="himcm-solution-number">02</p>
+              <h3>Build clean supply</h3>
+              <p>Support local wind, solar, and marine-energy infrastructure through targeted generation subsidies.</p>
+            </article>
+            <article>
+              <p class="himcm-solution-number">03</p>
+              <h3>Cool with seawater</h3>
+              <p>Develop seawater cooling technology to lower PUE and reduce thermal-management energy demand.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="himcm-paper-cta" aria-labelledby="paper-heading">
+        <div class="himcm-inner">
+          <p class="himcm-label">Continue reading</p>
+          <h2 id="paper-heading">Explore the assumptions, equations, and full model.</h2>
+          <p>The complete 25-page HiMCM paper includes the methodology, sensitivity analysis, forecasting models, and policy recommendations behind these results.</p>
+          <a class="himcm-paper-link" href="assets/research/HiMCM%20outstanding%20copy.pdf" target="_blank" rel="noopener" aria-label="Read more: open the original HiMCM paper">Read more</a>
+        </div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
