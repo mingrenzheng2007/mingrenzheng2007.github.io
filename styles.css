@@ -194,6 +194,187 @@
   }
 }
 
+/* Animated urban drone cover */
+.paper-card-drone {
+  isolation: isolate;
+}
+
+.paper-card.paper-card-drone:hover > img,
+.paper-card.paper-card-drone:focus-within > img {
+  transform: none;
+}
+
+.paper-card-drone .paper-copy {
+  z-index: 3;
+}
+
+.drone-scene-motion {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 1;
+  width: auto;
+  min-width: 100%;
+  height: 100%;
+  aspect-ratio: 1672 / 941;
+  overflow: hidden;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+}
+
+.drone-motion-svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.drone-route-base,
+.drone-route-flow,
+.drone-wind-lines path {
+  fill: none;
+  stroke-linecap: round;
+}
+
+.drone-route-base {
+  stroke: rgba(255, 134, 66, 0.55);
+  stroke-width: 5;
+  filter: url(#route-glow);
+}
+
+.drone-route-flow {
+  stroke: rgba(255, 206, 141, 0.98);
+  stroke-width: 7;
+  stroke-dasharray: 68 210;
+  filter: url(#route-glow);
+  animation: drone-route-flow 3.8s linear infinite;
+}
+
+.drone-wind-lines path {
+  stroke: url(#wind-fade);
+  stroke-width: 3.5;
+  stroke-dasharray: 46 150;
+  opacity: 0.78;
+  animation: drone-wind-flow var(--wind-speed) linear infinite;
+  animation-delay: var(--wind-delay, 0s);
+  filter: drop-shadow(0 0 4px rgba(168, 232, 255, 0.46));
+}
+
+.drone-flight-sprite {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: drone-flight-bob 1.65s ease-in-out infinite alternate;
+}
+
+.drone-motion-fallback {
+  position: absolute;
+  left: 56%;
+  top: 56%;
+  display: none;
+  width: 17%;
+  transform: translate(-50%, -50%);
+  filter: drop-shadow(0 8px 8px rgba(0, 21, 43, 0.5));
+}
+
+.drone-cloud {
+  position: absolute;
+  left: -24%;
+  z-index: 0;
+  width: 25%;
+  height: 9%;
+  opacity: var(--cloud-opacity);
+  background:
+    radial-gradient(ellipse at 18% 62%, rgba(255, 255, 255, 0.52) 0 18%, transparent 57%),
+    radial-gradient(ellipse at 42% 42%, rgba(255, 255, 255, 0.68) 0 22%, transparent 60%),
+    radial-gradient(ellipse at 66% 54%, rgba(255, 255, 255, 0.58) 0 24%, transparent 62%),
+    radial-gradient(ellipse at 86% 65%, rgba(255, 255, 255, 0.44) 0 17%, transparent 55%);
+  filter: blur(5px) drop-shadow(0 10px 8px rgba(65, 113, 149, 0.22));
+  animation: drone-cloud-drift var(--cloud-speed) linear infinite;
+  animation-delay: var(--cloud-delay);
+}
+
+.drone-cloud-one {
+  top: 7%;
+  --cloud-speed: 32s;
+  --cloud-delay: -8s;
+  --cloud-opacity: 0.72;
+  --cloud-scale: 1;
+}
+
+.drone-cloud-two {
+  top: 15%;
+  --cloud-speed: 43s;
+  --cloud-delay: -29s;
+  --cloud-opacity: 0.56;
+  --cloud-scale: 0.72;
+}
+
+.drone-cloud-three {
+  top: 23%;
+  --cloud-speed: 51s;
+  --cloud-delay: -17s;
+  --cloud-opacity: 0.42;
+  --cloud-scale: 0.55;
+}
+
+.drone-cloud-four {
+  top: 10%;
+  --cloud-speed: 39s;
+  --cloud-delay: -2s;
+  --cloud-opacity: 0.48;
+  --cloud-scale: 0.82;
+}
+
+@keyframes drone-route-flow {
+  to {
+    stroke-dashoffset: -278;
+  }
+}
+
+@keyframes drone-wind-flow {
+  to {
+    stroke-dashoffset: -392;
+  }
+}
+
+@keyframes drone-flight-bob {
+  from {
+    transform: translateY(-5px) rotate(-1deg);
+  }
+
+  to {
+    transform: translateY(6px) rotate(1.2deg);
+  }
+}
+
+@keyframes drone-cloud-drift {
+  from {
+    transform: translate3d(0, 0, 0) scale(var(--cloud-scale));
+  }
+
+  to {
+    transform: translate3d(610%, 10%, 0) scale(var(--cloud-scale));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .drone-route-flow,
+  .drone-wind-lines path,
+  .drone-flight-sprite,
+  .drone-cloud {
+    animation: none;
+  }
+
+  .drone-runner {
+    display: none;
+  }
+
+  .drone-motion-fallback {
+    display: block;
+  }
+}
+
 * {
   box-sizing: border-box;
 }
@@ -1055,6 +1236,623 @@ mark {
   color: var(--navy);
   background: var(--white);
   border-color: var(--white);
+}
+
+.paper-card-drone > img {
+  object-position: center 48%;
+}
+
+.drone-page {
+  color: #26313a;
+  background: var(--white);
+}
+
+.drone-inner {
+  position: relative;
+  width: min(100% - 64px, 1180px);
+  margin: 0 auto;
+}
+
+.drone-hero {
+  position: relative;
+  min-height: 720px;
+  display: grid;
+  align-items: end;
+  overflow: hidden;
+  color: var(--white);
+}
+
+.drone-hero > img,
+.drone-hero-overlay {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.drone-hero > img {
+  object-fit: cover;
+  object-position: center;
+}
+
+.drone-hero-overlay {
+  background: linear-gradient(to bottom, rgba(3, 20, 36, 0.06) 12%, rgba(3, 20, 36, 0.28) 50%, rgba(3, 20, 36, 0.94) 100%);
+}
+
+.drone-hero-copy {
+  z-index: 2;
+  padding: 190px 0 76px;
+}
+
+.drone-eyebrow,
+.drone-label {
+  margin: 0 0 14px;
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.drone-eyebrow {
+  color: #ffc15d;
+}
+
+.drone-label {
+  color: var(--coral);
+}
+
+.drone-hero h1 {
+  max-width: 900px;
+  margin: 0 0 22px;
+  color: var(--white);
+  font-size: 62px;
+  line-height: 1.05;
+  letter-spacing: 0;
+}
+
+.drone-hero-copy > p:last-child {
+  max-width: 860px;
+  margin: 0;
+  font-size: 21px;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.drone-summary,
+.drone-factors,
+.drone-routes,
+.drone-methods,
+.drone-assumptions,
+.drone-paper-cta {
+  padding: 86px 0;
+}
+
+.drone-heading {
+  max-width: 800px;
+  margin-bottom: 38px;
+}
+
+.drone-heading h2,
+.drone-paper-cta h2 {
+  margin: 0 0 18px;
+  color: var(--navy);
+  font-size: 38px;
+  line-height: 1.16;
+  letter-spacing: 0;
+}
+
+.drone-heading > p:last-child,
+.drone-paper-cta .drone-inner > p {
+  max-width: 780px;
+  margin: 0;
+}
+
+.drone-stat-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.drone-stat {
+  min-width: 0;
+  padding: 28px;
+  background: #f4f7f7;
+  border-left: 5px solid var(--aqua);
+  border-radius: 4px;
+}
+
+.drone-stat:nth-child(2) {
+  border-left-color: var(--coral);
+}
+
+.drone-stat:nth-child(3) {
+  border-left-color: var(--orange);
+}
+
+.drone-stat p {
+  margin: 0;
+}
+
+.drone-stat-label {
+  min-height: 44px;
+  color: var(--blue);
+  font-size: 13px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.drone-stat-value {
+  padding: 8px 0 10px;
+  color: var(--navy);
+  font-size: 34px;
+  font-weight: 900;
+  line-height: 1.1;
+}
+
+.drone-factors {
+  background: #eef5f2;
+}
+
+.drone-factors-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 0.78fr) minmax(0, 1.22fr);
+  gap: 70px;
+  align-items: center;
+}
+
+.drone-factors .drone-heading {
+  margin-bottom: 0;
+}
+
+.drone-factor-chart {
+  margin: 0;
+}
+
+.drone-factor-legend,
+.drone-route-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 22px;
+  color: #53616a;
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.drone-factor-legend {
+  margin-bottom: 24px;
+}
+
+.drone-factor-legend span,
+.drone-route-legend span {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.drone-factor-legend i {
+  width: 13px;
+  height: 13px;
+}
+
+.drone-swatch-boston,
+.drone-factor-bar.boston {
+  background: var(--aqua);
+}
+
+.drone-swatch-shenzhen,
+.drone-factor-bar.shenzhen {
+  background: var(--coral);
+}
+
+.drone-factor-row {
+  display: grid;
+  grid-template-columns: 170px minmax(0, 1fr) minmax(0, 1fr);
+  gap: 12px;
+  align-items: center;
+  margin-bottom: 18px;
+}
+
+.drone-factor-row > p {
+  margin: 0;
+  color: var(--navy);
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.drone-factor-row > div {
+  height: 28px;
+  overflow: visible;
+  background: rgba(6, 33, 67, 0.08);
+}
+
+.drone-factor-bar {
+  position: relative;
+  display: block;
+  min-width: 52px;
+  height: 100%;
+}
+
+.drone-factor-bar b {
+  position: absolute;
+  right: 7px;
+  top: 50%;
+  color: var(--white);
+  font-size: 12px;
+  transform: translateY(-50%);
+}
+
+.drone-factor-total {
+  padding-top: 18px;
+  border-top: 1px solid rgba(6, 33, 67, 0.2);
+}
+
+.drone-factor-chart figcaption {
+  margin-top: 24px;
+  color: #64717a;
+  font-size: 13px;
+}
+
+.drone-routes {
+  background: #f7f7f5;
+}
+
+.drone-route-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.drone-route-figure {
+  min-width: 0;
+  margin: 0;
+  padding: 26px;
+  background: var(--white);
+  border: 1px solid #dbe1e3;
+  border-radius: 4px;
+}
+
+.drone-route-figure h3 {
+  margin: 0 0 3px;
+  color: var(--navy);
+  font-size: 23px;
+  line-height: 1.2;
+}
+
+.drone-route-figure > p {
+  margin: 0 0 10px;
+  color: #64717a;
+  font-size: 14px;
+}
+
+.drone-route-figure svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.drone-route-gridlines line {
+  stroke: #e2e6e8;
+  stroke-width: 1;
+}
+
+.drone-route-axis line {
+  stroke: var(--navy);
+  stroke-width: 1.5;
+}
+
+.drone-route-ideal,
+.drone-route-actual {
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.drone-route-ideal {
+  stroke: #74818a;
+  stroke-width: 3;
+  stroke-dasharray: 8 7;
+}
+
+.drone-route-actual {
+  stroke: var(--aqua);
+  stroke-width: 5;
+}
+
+.drone-route-actual.shenzhen {
+  stroke: var(--coral);
+}
+
+.drone-route-start {
+  fill: var(--green);
+  stroke: var(--white);
+  stroke-width: 2;
+}
+
+.drone-route-end {
+  fill: var(--navy);
+  stroke: var(--white);
+  stroke-width: 2;
+}
+
+.drone-drift-marker {
+  stroke: var(--aqua);
+  stroke-width: 3;
+}
+
+.drone-drift-marker.shenzhen {
+  stroke: var(--coral);
+}
+
+.drone-route-labels text {
+  fill: var(--navy);
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.drone-route-legend {
+  margin-top: 6px;
+}
+
+.drone-route-legend i {
+  width: 28px;
+  height: 4px;
+}
+
+.drone-line-ideal {
+  background: repeating-linear-gradient(to right, #74818a 0 7px, transparent 7px 12px);
+}
+
+.drone-line-actual {
+  background: var(--aqua);
+}
+
+.drone-line-actual.shenzhen {
+  background: var(--coral);
+}
+
+.drone-methods {
+  background: var(--white);
+}
+
+.drone-methods-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+  gap: 70px;
+  align-items: start;
+}
+
+.drone-methods .drone-heading {
+  margin-bottom: 0;
+}
+
+.drone-method-table {
+  width: 100%;
+  border-collapse: collapse;
+  color: var(--navy);
+}
+
+.drone-method-table caption {
+  padding-bottom: 12px;
+  color: #64717a;
+  font-size: 13px;
+  text-align: left;
+}
+
+.drone-method-table th,
+.drone-method-table td {
+  padding: 15px 12px;
+  border-bottom: 1px solid #dbe1e3;
+  text-align: left;
+}
+
+.drone-method-table thead th {
+  color: var(--blue);
+  font-size: 13px;
+  text-transform: uppercase;
+}
+
+.drone-method-table tbody th {
+  font-weight: 800;
+}
+
+.drone-method-table tbody td:nth-child(2) {
+  color: #287f88;
+  font-weight: 900;
+}
+
+.drone-method-table tbody td:nth-child(3) {
+  color: var(--coral);
+  font-weight: 900;
+}
+
+.drone-method-takeaway {
+  margin: 22px 0 0;
+  padding: 18px 20px;
+  background: #eef5f2;
+  border-left: 4px solid var(--green);
+}
+
+.drone-assumptions {
+  color: var(--white);
+  background: #123950;
+}
+
+.drone-assumptions .drone-label,
+.drone-paper-cta .drone-label {
+  color: #ffc15d;
+}
+
+.drone-assumption-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1px;
+  margin-top: 30px;
+  background: rgba(255, 255, 255, 0.18);
+}
+
+.drone-assumption-grid div {
+  min-width: 0;
+  padding: 28px 24px;
+  background: #123950;
+}
+
+.drone-assumption-grid strong,
+.drone-assumption-grid span {
+  display: block;
+}
+
+.drone-assumption-grid strong {
+  color: #ffc15d;
+  font-size: 31px;
+  line-height: 1.1;
+}
+
+.drone-assumption-grid span {
+  margin-top: 8px;
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.drone-scope-note {
+  max-width: 900px;
+  margin: 28px 0 0;
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.drone-paper-cta {
+  color: var(--white);
+  background: var(--navy);
+}
+
+.drone-paper-cta h2 {
+  max-width: 880px;
+  color: var(--white);
+}
+
+.drone-paper-cta .drone-inner > p {
+  margin-bottom: 30px;
+}
+
+.drone-paper-link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 48px;
+  padding: 12px 22px;
+  color: var(--white);
+  background: var(--coral);
+  border: 2px solid var(--coral);
+  border-radius: 4px;
+  font-weight: 900;
+}
+
+.drone-paper-link:hover,
+.drone-paper-link:focus-visible {
+  color: var(--navy);
+  background: var(--white);
+  border-color: var(--white);
+}
+
+@media (max-width: 980px) {
+  .drone-factors-layout,
+  .drone-methods-layout {
+    grid-template-columns: 1fr;
+    gap: 38px;
+  }
+
+  .drone-route-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .drone-inner {
+    width: min(100% - 34px, 1180px);
+  }
+
+  .drone-hero {
+    min-height: 640px;
+  }
+
+  .drone-hero > img {
+    object-position: 58% center;
+  }
+
+  .drone-hero-copy {
+    padding: 220px 0 48px;
+  }
+
+  .drone-eyebrow,
+  .drone-label {
+    font-size: 12px;
+  }
+
+  .drone-hero h1 {
+    font-size: 40px;
+  }
+
+  .drone-hero-copy > p:last-child {
+    font-size: 17px;
+  }
+
+  .drone-summary,
+  .drone-factors,
+  .drone-routes,
+  .drone-methods,
+  .drone-assumptions,
+  .drone-paper-cta {
+    padding: 62px 0;
+  }
+
+  .drone-heading h2,
+  .drone-paper-cta h2 {
+    font-size: 31px;
+  }
+
+  .drone-stat-grid,
+  .drone-assumption-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .drone-stat-label {
+    min-height: 0;
+  }
+
+  .drone-stat-value {
+    font-size: 31px;
+  }
+
+  .drone-factor-row {
+    grid-template-columns: 1fr;
+    gap: 6px;
+    margin-bottom: 24px;
+  }
+
+  .drone-factor-row > div {
+    height: 26px;
+  }
+
+  .drone-route-figure {
+    padding: 16px;
+  }
+
+  .drone-route-labels text {
+    font-size: 19px;
+  }
+
+  .drone-method-table th,
+  .drone-method-table td {
+    padding: 13px 8px;
+    font-size: 14px;
+  }
+
+  .drone-assumption-grid div {
+    padding: 20px 4px;
+  }
+
+  .drone-paper-link {
+    width: 100%;
+    justify-content: center;
+  }
 }
 
 .photo-wall,

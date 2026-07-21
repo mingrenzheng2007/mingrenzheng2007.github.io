@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ALLEN ZHENG | URBAN DRONE WIND DRIFT</title>
+    <meta name="description" content="A visual summary of Allen Zheng's research modeling urban wind drift along drone routes in Boston and Shenzhen.">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body class="drone-page">
+    <header class="site-header over-media">
+      <a class="brand" href="index.html">ALLEN ZHENG</a>
+      <nav class="site-nav" aria-label="Primary navigation">
+        <a href="index.html">HOME</a>
+        <a class="active" href="academic.html">Academic &amp; Research</a>
+        <a href="athletic.html">Athletic</a>
+        <a href="game.html">Game</a>
+        <a href="art.html">Art</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="drone-hero" aria-labelledby="drone-title">
+        <img src="assets/research/backgrounds/urban-drone-wind-hero.png" alt="Drone following an orange route while wind currents bend around low-rise and high-rise urban districts">
+        <div class="drone-hero-overlay" aria-hidden="true"></div>
+        <div class="drone-inner drone-hero-copy">
+          <p class="drone-eyebrow">Independent research &middot; Differential equations</p>
+          <h1 id="drone-title">Modeling Wind Drift in Urban Drone Routes</h1>
+          <p>How different city forms redirect drone flight from Harvard to MIT in Boston and from Spring Bamboo to Poly Theatre in Shenzhen.</p>
+        </div>
+      </section>
+
+      <section class="drone-summary" aria-labelledby="drone-results-heading">
+        <div class="drone-inner">
+          <header class="drone-heading">
+            <p class="drone-label">Key findings</p>
+            <h2 id="drone-results-heading">Similar routes. Very different wind exposure.</h2>
+          </header>
+
+          <div class="drone-stat-grid">
+            <article class="drone-stat">
+              <p class="drone-stat-label">Harvard to MIT</p>
+              <p class="drone-stat-value">0.330</p>
+              <p>Estimated urban wind-risk score for the lower-rise Cambridge route.</p>
+            </article>
+            <article class="drone-stat">
+              <p class="drone-stat-label">Spring Bamboo to Poly Theatre</p>
+              <p class="drone-stat-value">0.790</p>
+              <p>Estimated score for Shenzhen's denser, taller urban corridor.</p>
+            </article>
+            <article class="drone-stat">
+              <p class="drone-stat-label">Maximum route deviation</p>
+              <p class="drone-stat-value">36 m vs 56 m</p>
+              <p>The Shenzhen route bends farther from the ideal no-wind path.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="drone-factors" aria-labelledby="factors-heading">
+        <div class="drone-inner drone-factors-layout">
+          <header class="drone-heading">
+            <p class="drone-label">Urban form model</p>
+            <h2 id="factors-heading">Height and density amplify the modeled wind effect.</h2>
+            <p>The risk score combines normalized building height, building density, and street-canyon intensity using weights of 0.5, 0.3, and 0.2.</p>
+          </header>
+
+          <figure class="drone-factor-chart" aria-labelledby="factor-chart-caption">
+            <div class="drone-factor-legend" aria-hidden="true">
+              <span><i class="drone-swatch-boston"></i>Boston route</span>
+              <span><i class="drone-swatch-shenzhen"></i>Shenzhen route</span>
+            </div>
+
+            <div class="drone-factor-row">
+              <p>Building height</p>
+              <div><span class="drone-factor-bar boston" style="width: 25%"><b>0.25</b></span></div>
+              <div><span class="drone-factor-bar shenzhen" style="width: 85%"><b>0.85</b></span></div>
+            </div>
+            <div class="drone-factor-row">
+              <p>Building density</p>
+              <div><span class="drone-factor-bar boston" style="width: 45%"><b>0.45</b></span></div>
+              <div><span class="drone-factor-bar shenzhen" style="width: 75%"><b>0.75</b></span></div>
+            </div>
+            <div class="drone-factor-row">
+              <p>Street-canyon intensity</p>
+              <div><span class="drone-factor-bar boston" style="width: 35%"><b>0.35</b></span></div>
+              <div><span class="drone-factor-bar shenzhen" style="width: 70%"><b>0.70</b></span></div>
+            </div>
+            <div class="drone-factor-row drone-factor-total">
+              <p>Weighted risk score</p>
+              <div><span class="drone-factor-bar boston" style="width: 33%"><b>0.330</b></span></div>
+              <div><span class="drone-factor-bar shenzhen" style="width: 79%"><b>0.790</b></span></div>
+            </div>
+            <figcaption id="factor-chart-caption">Normalized estimates from the paper's urban wind-risk model. A value of 1.0 represents the reference maximum.</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="drone-routes" aria-labelledby="routes-heading">
+        <div class="drone-inner">
+          <header class="drone-heading">
+            <p class="drone-label">Flight path comparison</p>
+            <h2 id="routes-heading">The same wind speed produces a different path shape.</h2>
+            <p>Runge-Kutta estimates are shown against each ideal straight route. The Shenzhen path curves much farther away before returning to its destination.</p>
+          </header>
+
+          <div class="drone-route-grid">
+            <figure class="drone-route-figure">
+              <h3>Harvard to MIT</h3>
+              <p>Cambridge / Boston</p>
+              <svg viewBox="0 0 560 330" role="img" aria-labelledby="boston-route-title boston-route-description">
+                <title id="boston-route-title">Harvard to MIT ideal and wind-affected drone routes</title>
+                <desc id="boston-route-description">The Runge-Kutta route stays close to the ideal line and ends about 35.6 meters from the target point.</desc>
+                <g class="drone-route-gridlines">
+                  <line x1="70" y1="63" x2="510" y2="63"></line>
+                  <line x1="70" y1="127" x2="510" y2="127"></line>
+                  <line x1="70" y1="191" x2="510" y2="191"></line>
+                  <line x1="70" y1="255" x2="510" y2="255"></line>
+                  <line x1="70" y1="50" x2="70" y2="280"></line>
+                  <line x1="175" y1="50" x2="175" y2="280"></line>
+                  <line x1="280" y1="50" x2="280" y2="280"></line>
+                  <line x1="385" y1="50" x2="385" y2="280"></line>
+                  <line x1="490" y1="50" x2="490" y2="280"></line>
+                </g>
+                <g class="drone-route-axis">
+                  <line x1="70" y1="50" x2="70" y2="280"></line>
+                  <line x1="70" y1="280" x2="510" y2="280"></line>
+                </g>
+                <path class="drone-route-ideal" d="M70.0 62.8 L499.5 267.2"></path>
+                <path class="drone-route-actual" d="M70.0 62.8 L91.5 73.0 L113.1 83.1 L134.7 93.2 L156.3 103.3 L178.1 113.4 L199.8 123.4 L221.6 133.3 L243.4 143.3 L265.3 153.2 L287.1 163.2 L308.9 173.1 L330.8 183.1 L352.6 193.0 L374.4 203.0 L396.1 213.0 L417.8 223.1 L439.5 233.1 L461.1 243.3 L482.6 253.4 L504.1 263.6"></path>
+                <circle class="drone-route-start" cx="70" cy="62.8" r="6"></circle>
+                <circle class="drone-route-end" cx="499.5" cy="267.2" r="6"></circle>
+                <line class="drone-drift-marker" x1="499.5" y1="267.2" x2="504.1" y2="263.6"></line>
+                <g class="drone-route-labels">
+                  <text x="76" y="48">Harvard</text>
+                  <text x="495" y="304" text-anchor="end">MIT</text>
+                  <text x="520" y="235" text-anchor="end">35.6 m drift</text>
+                  <text x="286" y="322" text-anchor="middle">East-West position (km)</text>
+                </g>
+              </svg>
+              <div class="drone-route-legend">
+                <span><i class="drone-line-ideal"></i>Ideal path</span>
+                <span><i class="drone-line-actual"></i>Wind-affected path</span>
+              </div>
+            </figure>
+
+            <figure class="drone-route-figure">
+              <h3>Spring Bamboo to Poly Theatre</h3>
+              <p>Shenzhen / Nanshan</p>
+              <svg viewBox="0 0 560 330" role="img" aria-labelledby="shenzhen-route-title shenzhen-route-description">
+                <title id="shenzhen-route-title">Spring Bamboo to Poly Theatre ideal and wind-affected drone routes</title>
+                <desc id="shenzhen-route-description">The Runge-Kutta route curves visibly above the ideal line, reaching a maximum deviation of about 56 meters.</desc>
+                <g class="drone-route-gridlines">
+                  <line x1="70" y1="280" x2="510" y2="280"></line>
+                  <line x1="70" y1="223" x2="510" y2="223"></line>
+                  <line x1="70" y1="165" x2="510" y2="165"></line>
+                  <line x1="70" y1="108" x2="510" y2="108"></line>
+                  <line x1="70" y1="50" x2="510" y2="50"></line>
+                  <line x1="70" y1="50" x2="70" y2="280"></line>
+                  <line x1="180" y1="50" x2="180" y2="280"></line>
+                  <line x1="290" y1="50" x2="290" y2="280"></line>
+                  <line x1="400" y1="50" x2="400" y2="280"></line>
+                  <line x1="510" y1="50" x2="510" y2="280"></line>
+                </g>
+                <g class="drone-route-axis">
+                  <line x1="70" y1="50" x2="70" y2="280"></line>
+                  <line x1="70" y1="280" x2="510" y2="280"></line>
+                </g>
+                <path class="drone-route-ideal" d="M70.0 280.0 L495.3 78.8"></path>
+                <path class="drone-route-actual shenzhen" d="M70.0 280.0 L91.3 269.1 L112.5 256.8 L133.8 243.2 L155.1 228.7 L176.3 213.6 L197.6 198.5 L218.9 184.0 L240.1 170.3 L261.4 158.0 L282.7 147.2 L303.9 137.9 L325.2 130.1 L346.5 123.6 L367.7 118.0 L389.0 113.0 L410.3 107.9 L431.5 102.3 L452.8 95.8 L474.1 88.0 L495.3 78.8"></path>
+                <circle class="drone-route-start" cx="70" cy="280" r="6"></circle>
+                <circle class="drone-route-end" cx="495.3" cy="78.8" r="6"></circle>
+                <line class="drone-drift-marker shenzhen" x1="283" y1="183" x2="283" y2="147"></line>
+                <g class="drone-route-labels">
+                  <text x="76" y="262">Spring Bamboo</text>
+                  <text x="493" y="65" text-anchor="end">Poly Theatre</text>
+                  <text x="155" y="105">56.0 m max deviation</text>
+                  <text x="286" y="322" text-anchor="middle">East-West position (km)</text>
+                </g>
+              </svg>
+              <div class="drone-route-legend">
+                <span><i class="drone-line-ideal"></i>Ideal path</span>
+                <span><i class="drone-line-actual shenzhen"></i>Wind-affected path</span>
+              </div>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <section class="drone-methods" aria-labelledby="methods-heading">
+        <div class="drone-inner drone-methods-layout">
+          <header class="drone-heading">
+            <p class="drone-label">Numerical validation</p>
+            <h2 id="methods-heading">Three methods point to the same conclusion.</h2>
+            <p>Euler, Improved Euler, and fourth-order Runge-Kutta produce nearly identical deviations within each city.</p>
+          </header>
+
+          <div class="drone-method-table-wrap">
+            <table class="drone-method-table">
+              <caption>Route deviation by numerical method, in meters</caption>
+              <thead>
+                <tr>
+                  <th scope="col">Method</th>
+                  <th scope="col">Boston</th>
+                  <th scope="col">Shenzhen</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><th scope="row">Euler</th><td>35.55 m</td><td>55.54 m</td></tr>
+                <tr><th scope="row">Improved Euler</th><td>35.50 m</td><td>55.54 m</td></tr>
+                <tr><th scope="row">Runge-Kutta</th><td>35.57 m</td><td>56.00 m</td></tr>
+              </tbody>
+            </table>
+            <p class="drone-method-takeaway"><strong>Result:</strong> Shenzhen's modeled deviation remains about 20 meters greater regardless of the approximation method.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="drone-assumptions" aria-label="Model assumptions">
+        <div class="drone-inner">
+          <p class="drone-label">Model scope</p>
+          <div class="drone-assumption-grid">
+            <div><strong>3 m/s</strong><span>shared wind speed</span></div>
+            <div><strong>10 m/s</strong><span>drone speed</span></div>
+            <div><strong>20</strong><span>numerical steps</span></div>
+            <div><strong>265 ft</strong><span>assumed flight altitude</span></div>
+          </div>
+          <p class="drone-scope-note">The urban factors are estimated normalized inputs. Real-world route planning would require live wind observations, more routes, and finer numerical resolution.</p>
+        </div>
+      </section>
+
+      <section class="drone-paper-cta" aria-labelledby="drone-paper-heading">
+        <div class="drone-inner">
+          <p class="drone-label">Continue reading</p>
+          <h2 id="drone-paper-heading">Explore the equations, datasets, maps, and complete route analysis.</h2>
+          <p>The full 29-page paper documents the urban risk model, all 20-step calculations, city maps, assumptions, and comparison across three numerical methods.</p>
+          <a class="drone-paper-link" href="assets/research/modeling-wind-drift-urban-drone-routes.pdf" target="_blank" rel="noopener">Read full paper</a>
+        </div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>

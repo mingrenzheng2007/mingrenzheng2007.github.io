@@ -80,6 +80,66 @@
             </div>
           </article>
 
+          <article class="paper-card paper-card-featured paper-card-drone">
+            <img src="assets/research/backgrounds/urban-drone-wind-clean.png" alt="Aerial view connecting lower-rise Boston and Shenzhen high-rises with visible urban wind currents">
+
+            <div class="drone-scene-motion" aria-hidden="true">
+              <span class="drone-cloud drone-cloud-one"></span>
+              <span class="drone-cloud drone-cloud-two"></span>
+              <span class="drone-cloud drone-cloud-three"></span>
+              <span class="drone-cloud drone-cloud-four"></span>
+
+              <svg class="drone-motion-svg" viewBox="0 0 1672 941" preserveAspectRatio="xMidYMid meet">
+                <defs>
+                  <filter id="route-glow" x="-30%" y="-30%" width="160%" height="160%">
+                    <feGaussianBlur stdDeviation="5" result="blur"></feGaussianBlur>
+                    <feMerge>
+                      <feMergeNode in="blur"></feMergeNode>
+                      <feMergeNode in="SourceGraphic"></feMergeNode>
+                    </feMerge>
+                  </filter>
+                  <filter id="drone-shadow" x="-35%" y="-35%" width="170%" height="170%">
+                    <feDropShadow dx="0" dy="10" stdDeviation="8" flood-color="#00152b" flood-opacity="0.5"></feDropShadow>
+                  </filter>
+                  <linearGradient id="wind-fade" x1="0" x2="1">
+                    <stop offset="0" stop-color="#d6f4ff" stop-opacity="0"></stop>
+                    <stop offset="0.5" stop-color="#d6f4ff" stop-opacity="0.8"></stop>
+                    <stop offset="1" stop-color="#d6f4ff" stop-opacity="0"></stop>
+                  </linearGradient>
+                  <path id="drone-flight-path" d="M 80 500 C 330 520, 540 500, 760 440 S 1100 350, 1450 300"></path>
+                </defs>
+
+                <g class="drone-route-lines">
+                  <use href="#drone-flight-path" class="drone-route-base"></use>
+                  <use href="#drone-flight-path" class="drone-route-flow"></use>
+                </g>
+
+                <g class="drone-wind-lines">
+                  <path d="M 930 338 C 1040 290, 1130 298, 1215 350 S 1390 420, 1550 350" style="--wind-speed: 7.2s;"></path>
+                  <path d="M 895 405 C 1035 350, 1130 380, 1230 430 S 1420 505, 1585 430" style="--wind-speed: 8.6s; --wind-delay: -3.1s;"></path>
+                  <path d="M 1005 505 C 1110 455, 1210 480, 1285 535 S 1430 610, 1570 545" style="--wind-speed: 6.8s; --wind-delay: -1.8s;"></path>
+                </g>
+
+                <g class="drone-runner">
+                  <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.08;0.9;1" dur="13s" repeatCount="indefinite"></animate>
+                  <animateMotion dur="13s" repeatCount="indefinite" rotate="0" keyPoints="0;0.47;1" keyTimes="0;0.55;1" calcMode="spline" keySplines="0.35 0 0.25 1;0.35 0 0.25 1">
+                    <mpath href="#drone-flight-path"></mpath>
+                  </animateMotion>
+                  <image class="drone-flight-sprite" href="assets/research/backgrounds/drone-flight-sprite.png" x="-130" y="-58" width="260" height="117" filter="url(#drone-shadow)"></image>
+                </g>
+              </svg>
+
+              <img class="drone-motion-fallback" src="assets/research/backgrounds/drone-flight-sprite.png" alt="">
+            </div>
+
+            <div class="paper-copy">
+              <p class="paper-meta">Independent research &middot; Differential equations</p>
+              <h3>Modeling Wind Drift in Urban Drone Routes</h3>
+              <p>A comparative model of how Boston and Shenzhen urban form changes drone paths, wind disturbance, and route correction.</p>
+              <a href="drone-wind-visualization.html">Read more</a>
+            </div>
+          </article>
+
           <article class="paper-card">
             <img src="assets/research/backgrounds/globalization-containers.jpg" alt="Shipping containers at a port">
             <div class="paper-copy">
@@ -100,15 +160,6 @@
             </div>
           </article>
 
-          <article class="paper-card">
-            <img src="assets/research/backgrounds/accessibility-braille.png" alt="Braille glove prototype">
-            <div class="paper-copy">
-              <p class="paper-meta">Human-centered design</p>
-              <h3>VOCI Final Project</h3>
-              <p>A final project document connecting technical exploration with human-centered design and practical communication.</p>
-              <a href="assets/research/voci%20final%20project.pdf" target="_blank" rel="noopener">Read more</a>
-            </div>
-          </article>
         </div>
       </section>
     </main>
