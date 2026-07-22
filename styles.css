@@ -4234,3 +4234,211 @@ mark {
     transition: none;
   }
 }
+
+/* Animated city-systems hero for Academic & Research */
+.academic-city-hero {
+  isolation: isolate;
+  background: #071d2d;
+}
+
+.academic-city-hero > img {
+  z-index: 0;
+  object-position: center 52%;
+  filter: saturate(0.9) contrast(1.02);
+  transform: scale(1.035);
+  animation: academic-city-camera 18s ease-in-out infinite alternate;
+}
+
+.academic-city-overlay {
+  z-index: 1;
+  opacity: 1;
+  background: linear-gradient(to bottom, rgba(4, 17, 29, 0.22) 0%, rgba(4, 17, 29, 0.42) 46%, rgba(4, 17, 29, 0.72) 100%);
+}
+
+.academic-city-motion {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.academic-city-copy {
+  z-index: 3 !important;
+}
+
+.academic-city-copy h1 {
+  max-width: 1050px;
+  margin-inline: auto;
+  font-size: clamp(38px, 4.4vw, 60px);
+}
+
+.academic-city-copy p {
+  max-width: 900px;
+}
+
+.city-motion-svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.city-wind-lines path {
+  fill: none;
+  stroke: rgba(208, 244, 248, 0.3);
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-dasharray: 12 22;
+  animation: academic-city-wind 9s linear infinite;
+}
+
+.city-wind-lines path:nth-child(2) {
+  opacity: 0.72;
+  animation-duration: 11s;
+  animation-direction: reverse;
+}
+
+.city-wind-lines path:nth-child(3) {
+  opacity: 0.52;
+  animation-duration: 13s;
+}
+
+.city-route {
+  fill: none;
+  stroke-width: 2.7;
+  stroke-linecap: round;
+  stroke-dasharray: 3 13;
+  animation: academic-city-route 4.8s linear infinite;
+}
+
+.city-route-aqua {
+  stroke: rgba(96, 226, 233, 0.72);
+}
+
+.city-route-amber {
+  stroke: rgba(255, 198, 102, 0.76);
+  animation-duration: 5.8s;
+}
+
+.city-route-coral {
+  stroke: rgba(238, 112, 91, 0.7);
+  animation-duration: 6.6s;
+}
+
+.city-route-green {
+  stroke: rgba(107, 207, 159, 0.7);
+  animation-duration: 5.4s;
+  animation-direction: reverse;
+}
+
+.city-point-aqua {
+  fill: #79f5f4;
+}
+
+.city-point-amber {
+  fill: #ffd37e;
+}
+
+.city-point-coral {
+  fill: #ff8d73;
+}
+
+.city-point-green {
+  fill: #80e2ad;
+}
+
+.city-network-nodes circle {
+  fill: rgba(255, 255, 255, 0.22);
+  stroke: rgba(179, 245, 246, 0.82);
+  stroke-width: 2;
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: academic-city-node 3.6s ease-out infinite;
+}
+
+.city-network-nodes circle:nth-child(2) {
+  animation-delay: -0.8s;
+}
+
+.city-network-nodes circle:nth-child(3) {
+  animation-delay: -1.6s;
+}
+
+.city-network-nodes circle:nth-child(4) {
+  animation-delay: -2.4s;
+}
+
+.city-network-nodes circle:nth-child(5) {
+  animation-delay: -3.2s;
+}
+
+.city-water-shimmer {
+  position: absolute;
+  left: 31%;
+  top: 39%;
+  z-index: 1;
+  width: 58%;
+  height: 49%;
+  opacity: 0.13;
+  background: repeating-linear-gradient(5deg, transparent 0 25px, rgba(183, 240, 247, 0.62) 27px, transparent 31px);
+  clip-path: polygon(18% 4%, 100% 0, 100% 62%, 70% 58%, 40% 100%, 0 100%, 14% 46%);
+  mix-blend-mode: screen;
+  animation: academic-water-shimmer 11s linear infinite;
+}
+
+@keyframes academic-city-camera {
+  from { transform: scale(1.035) translate3d(-0.35%, 0, 0); }
+  to { transform: scale(1.07) translate3d(0.45%, -0.4%, 0); }
+}
+
+@keyframes academic-city-wind {
+  to { stroke-dashoffset: -136; }
+}
+
+@keyframes academic-city-route {
+  to { stroke-dashoffset: -96; }
+}
+
+@keyframes academic-city-node {
+  0% { opacity: 0.85; transform: scale(0.7); }
+  76%, 100% { opacity: 0; transform: scale(2.6); }
+}
+
+@keyframes academic-water-shimmer {
+  from { transform: translateX(-7%); }
+  to { transform: translateX(7%); }
+}
+
+@media (max-width: 700px) {
+  .academic-city-hero > img {
+    object-position: 53% center;
+  }
+
+  .academic-city-copy h1 {
+    font-size: 36px;
+    line-height: 1.05;
+  }
+
+  .academic-city-copy p {
+    font-size: 17px;
+    line-height: 1.5;
+  }
+
+  .city-water-shimmer {
+    left: 15%;
+    width: 86%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .academic-city-hero > img {
+    animation: none;
+    transform: none;
+  }
+
+  .academic-city-motion {
+    display: none;
+  }
+}

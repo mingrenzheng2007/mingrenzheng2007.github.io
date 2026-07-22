@@ -4,8 +4,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>ALLEN ZHENG | ACADEMIC & RESEARCH</title>
-    <meta name="description" content="Academic and research work by Allen Zheng.">
-    <link rel="stylesheet" href="styles.css?v=20260721-aml-all-test">
+    <meta name="description" content="Urban data, modeling, and research projects by Allen Zheng.">
+    <link rel="stylesheet" href="styles.css?v=20260721-city-research-hero">
   </head>
   <body class="academic-page">
     <header class="site-header solid">
@@ -20,16 +20,60 @@
     </header>
 
     <main>
-      <section class="academic-hero page-hero">
-        <img src="assets/research/backgrounds/modeling-visualization.jpg" alt="">
-        <div class="dark-overlay visible-media"></div>
-        <div>
-          <h1>EXPLORING QUESTIONS THROUGH RESEARCH</h1>
-          <p>
-            My academic work uses modeling, writing, and evidence to make open-ended
-            problems easier to reason about. These papers show how I frame assumptions,
-            compare tradeoffs, and communicate conclusions.
-          </p>
+      <section class="academic-hero page-hero academic-city-hero">
+        <img src="assets/research/backgrounds/urban-research-city-hero.jpg" alt="Blue-hour waterfront city with bridges, transportation corridors, parks, and mixed-density neighborhoods">
+
+        <div class="academic-city-motion" aria-hidden="true">
+          <span class="city-water-shimmer"></span>
+          <svg class="city-motion-svg" viewBox="0 0 1672 941" preserveAspectRatio="xMidYMid slice">
+            <defs>
+              <filter id="city-route-glow" x="-100%" y="-100%" width="300%" height="300%">
+                <feGaussianBlur stdDeviation="4" result="blur"></feGaussianBlur>
+                <feMerge><feMergeNode in="blur"></feMergeNode><feMergeNode in="SourceGraphic"></feMergeNode></feMerge>
+              </filter>
+              <path id="city-rail-path" d="M -60 636 C 190 574, 405 560, 612 505 S 820 430, 1020 421"></path>
+              <path id="city-bridge-path" d="M 575 545 C 780 493, 1050 472, 1435 506"></path>
+              <path id="city-parkway-path" d="M -70 895 C 220 790, 430 758, 650 720 S 1060 718, 1510 875"></path>
+              <path id="city-loop-path" d="M 40 870 C 105 720, 292 638, 456 681 C 590 716, 595 824, 470 902"></path>
+            </defs>
+
+            <g class="city-wind-lines">
+              <path d="M -120 250 C 190 168, 438 228, 745 167 S 1220 106, 1800 248"></path>
+              <path d="M -130 325 C 205 245, 500 302, 785 242 S 1260 188, 1800 330"></path>
+              <path d="M -90 400 C 220 338, 470 385, 720 335 S 1160 290, 1740 410"></path>
+            </g>
+
+            <g class="city-route-lines">
+              <use href="#city-rail-path" class="city-route city-route-aqua"></use>
+              <use href="#city-bridge-path" class="city-route city-route-amber"></use>
+              <use href="#city-parkway-path" class="city-route city-route-coral"></use>
+              <use href="#city-loop-path" class="city-route city-route-green"></use>
+            </g>
+
+            <g class="city-moving-points" filter="url(#city-route-glow)">
+              <circle class="city-point-aqua" r="4.5"><animateMotion dur="8.4s" begin="-1.2s" repeatCount="indefinite"><mpath href="#city-rail-path"></mpath></animateMotion></circle>
+              <circle class="city-point-aqua" r="3"><animateMotion dur="8.4s" begin="-5.3s" repeatCount="indefinite"><mpath href="#city-rail-path"></mpath></animateMotion></circle>
+              <circle class="city-point-amber" r="4.5"><animateMotion dur="9.8s" begin="-2.7s" repeatCount="indefinite"><mpath href="#city-bridge-path"></mpath></animateMotion></circle>
+              <circle class="city-point-amber" r="3"><animateMotion dur="9.8s" begin="-7.1s" repeatCount="indefinite"><mpath href="#city-bridge-path"></mpath></animateMotion></circle>
+              <circle class="city-point-coral" r="4.5"><animateMotion dur="12.5s" begin="-4.6s" repeatCount="indefinite"><mpath href="#city-parkway-path"></mpath></animateMotion></circle>
+              <circle class="city-point-coral" r="3"><animateMotion dur="12.5s" begin="-9.4s" repeatCount="indefinite"><mpath href="#city-parkway-path"></mpath></animateMotion></circle>
+              <circle class="city-point-green" r="4"><animateMotion dur="10.6s" begin="-3.8s" repeatCount="indefinite"><mpath href="#city-loop-path"></mpath></animateMotion></circle>
+            </g>
+
+            <g class="city-network-nodes">
+              <circle cx="312" cy="583" r="7"></circle>
+              <circle cx="618" cy="506" r="7"></circle>
+              <circle cx="1008" cy="455" r="7"></circle>
+              <circle cx="1308" cy="493" r="7"></circle>
+              <circle cx="652" cy="720" r="7"></circle>
+            </g>
+          </svg>
+        </div>
+
+        <div class="dark-overlay visible-media academic-city-overlay"></div>
+        <div class="academic-city-copy">
+          <h1>UNDERSTANDING CITIES THROUGH RESEARCH</h1>
+          <p>I use data and modeling to study urban problems, identify patterns, and explore practical ways to improve city life.</p>
         </div>
       </section>
 
