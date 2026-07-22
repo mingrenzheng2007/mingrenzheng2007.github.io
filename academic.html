@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>ALLEN ZHENG | ACADEMIC & RESEARCH</title>
     <meta name="description" content="Urban data, modeling, and research projects by Allen Zheng.">
-    <link rel="stylesheet" href="styles.css?v=20260721-city-research-hero">
+    <link rel="stylesheet" href="styles.css?v=20260721-oas-transport-test">
   </head>
   <body class="academic-page">
     <header class="site-header solid">
@@ -249,6 +249,61 @@
             </div>
           </article>
 
+          <article class="paper-card paper-card-featured paper-card-oas" id="oas-transport-safety-research">
+            <img src="assets/research/backgrounds/oas-transport-safety-hero.png" alt="Illuminated transport networks connecting North America, Central America, the Caribbean, and South America at twilight">
+
+            <div class="oas-scene-motion" aria-hidden="true">
+              <svg class="oas-motion-svg" viewBox="0 0 1672 941" preserveAspectRatio="xMidYMid slice">
+                <defs>
+                  <filter id="oas-point-glow-card" x="-100%" y="-100%" width="300%" height="300%">
+                    <feGaussianBlur stdDeviation="4" result="blur"></feGaussianBlur>
+                    <feMerge><feMergeNode in="blur"></feMergeNode><feMergeNode in="SourceGraphic"></feMergeNode></feMerge>
+                  </filter>
+                  <path id="oas-north-card" d="M 172 146 C 350 188, 510 224, 655 278 S 820 345, 950 420"></path>
+                  <path id="oas-caribbean-card" d="M 605 315 C 760 310, 875 350, 1012 422 S 1170 470, 1290 506"></path>
+                  <path id="oas-south-card" d="M 975 435 C 1090 506, 1165 570, 1196 675 S 1260 820, 1345 910"></path>
+                  <path id="oas-pacific-card" d="M 410 286 C 560 318, 690 360, 810 430 S 940 560, 1012 738"></path>
+                  <path id="oas-atlantic-card" d="M 725 222 C 860 238, 985 298, 1110 395 S 1340 540, 1505 640"></path>
+                </defs>
+
+                <g class="oas-network-lines">
+                  <use href="#oas-north-card" class="oas-route oas-route-amber"></use>
+                  <use href="#oas-caribbean-card" class="oas-route oas-route-cyan"></use>
+                  <use href="#oas-south-card" class="oas-route oas-route-coral"></use>
+                  <use href="#oas-pacific-card" class="oas-route oas-route-green"></use>
+                  <use href="#oas-atlantic-card" class="oas-route oas-route-violet"></use>
+                </g>
+
+                <g class="oas-moving-points" filter="url(#oas-point-glow-card)">
+                  <circle class="oas-point-amber" r="5"><animateMotion dur="9.2s" begin="-1.2s" repeatCount="indefinite"><mpath href="#oas-north-card"></mpath></animateMotion></circle>
+                  <circle class="oas-point-amber" r="3"><animateMotion dur="9.2s" begin="-5.8s" repeatCount="indefinite"><mpath href="#oas-north-card"></mpath></animateMotion></circle>
+                  <circle class="oas-point-cyan" r="5"><animateMotion dur="8.4s" begin="-2.4s" repeatCount="indefinite"><mpath href="#oas-caribbean-card"></mpath></animateMotion></circle>
+                  <circle class="oas-point-cyan" r="3"><animateMotion dur="8.4s" begin="-6.3s" repeatCount="indefinite"><mpath href="#oas-caribbean-card"></mpath></animateMotion></circle>
+                  <circle class="oas-point-coral" r="5"><animateMotion dur="10.8s" begin="-3.6s" repeatCount="indefinite"><mpath href="#oas-south-card"></mpath></animateMotion></circle>
+                  <circle class="oas-point-coral" r="3"><animateMotion dur="10.8s" begin="-8.2s" repeatCount="indefinite"><mpath href="#oas-south-card"></mpath></animateMotion></circle>
+                  <circle class="oas-point-green" r="4.5"><animateMotion dur="12.2s" begin="-7.1s" repeatCount="indefinite"><mpath href="#oas-pacific-card"></mpath></animateMotion></circle>
+                  <circle class="oas-point-violet" r="4"><animateMotion dur="13.5s" begin="-4.4s" repeatCount="indefinite"><mpath href="#oas-atlantic-card"></mpath></animateMotion></circle>
+                </g>
+
+                <g class="oas-cluster-nodes">
+                  <g class="oas-cluster oas-cluster-one"><circle class="oas-cluster-ring" cx="395" cy="220" r="18"></circle><circle class="oas-cluster-core" cx="395" cy="220" r="5"></circle></g>
+                  <g class="oas-cluster oas-cluster-two"><circle class="oas-cluster-ring" cx="700" cy="304" r="18"></circle><circle class="oas-cluster-core" cx="700" cy="304" r="5"></circle></g>
+                  <g class="oas-cluster oas-cluster-three"><circle class="oas-cluster-ring" cx="948" cy="420" r="18"></circle><circle class="oas-cluster-core" cx="948" cy="420" r="5"></circle></g>
+                  <g class="oas-cluster oas-cluster-four"><circle class="oas-cluster-ring" cx="1088" cy="530" r="18"></circle><circle class="oas-cluster-core" cx="1088" cy="530" r="5"></circle></g>
+                  <g class="oas-cluster oas-cluster-five"><circle class="oas-cluster-ring" cx="1210" cy="650" r="18"></circle><circle class="oas-cluster-core" cx="1210" cy="650" r="5"></circle></g>
+                  <g class="oas-cluster oas-cluster-six"><circle class="oas-cluster-ring" cx="1325" cy="790" r="18"></circle><circle class="oas-cluster-core" cx="1325" cy="790" r="5"></circle></g>
+                </g>
+              </svg>
+            </div>
+
+            <div class="paper-copy">
+              <p class="paper-meta">Collaborative research &middot; Scientific Reports 2025</p>
+              <h3>Modeling Transport Safety Across the Americas</h3>
+              <p>A DCRITIC-WASPAS model ranks 35 OAS countries across 15 safety indicators, then uses graph-enhanced K-means to form six comparable peer groups.</p>
+              <a href="oas-transport-safety-visualization.html">Read more</a>
+            </div>
+          </article>
+
           <article class="paper-card paper-card-featured paper-card-leukemia" id="aml-all-research">
             <img src="assets/research/backgrounds/aml-all-gene-expression-hero.png" alt="Abstract DNA, gene-expression heatmap, and machine-learning pathways separating two leukemia classes">
 
@@ -288,16 +343,6 @@
               <h3>Classifying Acute Leukemia from Gene Expression</h3>
               <p>Three machine-learning models distinguish AML from ALL across 7,129 expression probes and reveal the genes shaping each decision boundary.</p>
               <a href="aml-all-gene-expression-visualization.html">Read more</a>
-            </div>
-          </article>
-
-          <article class="paper-card">
-            <img src="assets/research/backgrounds/modeling-visualization.jpg" alt="Scientific visualization">
-            <div class="paper-copy">
-              <p class="paper-meta">Independent research</p>
-              <h3>Independent Modeling Draft</h3>
-              <p>A clean paper copy focused on model clarity, problem decomposition, and evidence-based communication.</p>
-              <a href="assets/research/no%20athur%20copy.pdf" target="_blank" rel="noopener">Read more</a>
             </div>
           </article>
 
