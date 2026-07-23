@@ -489,12 +489,16 @@ video {
 }
 
 .home-hero .hero-bg {
-  filter: blur(1.5px) saturate(0.82);
-  transform: scale(1.025);
+  filter: saturate(1.02) contrast(1.04);
+  transform: scale(1.005);
 }
 
 .blue-overlay {
   background: rgba(45, 93, 131, 0.78);
+}
+
+.home-hero .blue-overlay {
+  background: rgba(45, 93, 131, 0.5);
 }
 
 .dark-overlay {
