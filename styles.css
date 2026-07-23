@@ -1896,8 +1896,10 @@ mark {
 }
 
 .simple-title p {
-  margin: 0;
+  max-width: 960px;
+  margin: 0 auto;
   font-size: 20px;
+  line-height: 1.55;
 }
 
 .lead-images {
@@ -1913,6 +1915,18 @@ mark {
   height: 430px;
   object-fit: cover;
   box-shadow: var(--shadow);
+}
+
+.lead-proof {
+  margin: 0;
+}
+
+.lead-proof figcaption {
+  margin-top: 16px;
+  color: var(--navy);
+  font-size: 18px;
+  font-weight: 800;
+  text-align: center;
 }
 
 .video-grid.two-by-two {
