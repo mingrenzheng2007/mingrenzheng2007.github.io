@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Wharton Data Science | Allen Zheng</title>
+    <meta name="description" content="A visual Philadelphia collision analysis from the Wharton Data Science Academy, covering frequency, severity, planning districts, and policy implications.">
+    <link rel="stylesheet" href="styles.css?v=20260801-wharton-data-science">
+  </head>
+  <body class="wharton-page">
+    <header class="site-header solid wharton-header">
+      <a class="brand" href="index.html">ALLEN ZHENG</a>
+      <nav class="site-nav" aria-label="Primary navigation">
+        <a href="index.html">HOME</a>
+        <a href="academic.html">Academic &amp; Research</a>
+        <a class="active" href="wharton-data-science.html">Wharton Data Science</a>
+        <a href="athletic.html">Athletic</a>
+        <a href="game.html">Game</a>
+        <a href="art.html">Art</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="wharton-hero" aria-labelledby="wharton-title">
+        <div class="wharton-hero-grid">
+          <div class="wharton-hero-media">
+            <img src="assets/summer-program/wharton-presentation.jpeg" alt="Students presenting Philadelphia collision maps in a classroom">
+          </div>
+          <div class="wharton-hero-copy">
+            <p class="wharton-eyebrow">WHARTON GLOBAL YOUTH PROGRAM &middot; DATA SCIENCE ACADEMY</p>
+            <h1 id="wharton-title">From collision data to safer streets.</h1>
+            <p class="wharton-lede">A six-year Philadelphia study that turns 52,189 mapped collisions into visual evidence about where crashes happen, how severe they are, and what cities can do next.</p>
+            <div class="wharton-hero-meta">
+              <span>Philadelphia</span>
+              <span>2020&ndash;2025</span>
+              <span>18 planning districts</span>
+            </div>
+            <a class="wharton-button" href="#findings">Explore the findings <span aria-hidden="true">&darr;</span></a>
+          </div>
+        </div>
+      </section>
+
+      <section class="wharton-intro" id="findings">
+        <div class="wharton-inner">
+          <div class="wharton-section-heading">
+            <p class="wharton-label">THE PROJECT</p>
+            <h2>Two questions, one citywide map.</h2>
+            <p>The project combines collision records, spatial grouping, and severity modeling to make a large urban safety problem easier to inspect. The visual story keeps frequency and consequence separate so that a quieter district is not automatically treated as a safer one.</p>
+          </div>
+
+          <div class="wharton-question-grid">
+            <article>
+              <span class="wharton-question-number">01</span>
+              <h3>Which factors are most significantly correlated with evident injuries in a crash?</h3>
+              <p>Severity is organized with the KABCO scale: 0 no injury, 1 possible injury, 2 minor injury, 3 serious injury, and 4 fatal injury.</p>
+            </article>
+            <article>
+              <span class="wharton-question-number">02</span>
+              <h3>How are those characteristics shown by Philadelphia planning districts?</h3>
+              <p>Maps and models translate individual collision records into district-level patterns that can be compared across the city.</p>
+            </article>
+          </div>
+
+          <div class="wharton-stat-strip" aria-label="Project scope">
+            <div><strong>52,189</strong><span>mapped crashes</span></div>
+            <div><strong>18</strong><span>planning districts</span></div>
+            <div><strong>3</strong><span>visual lenses</span></div>
+            <div><strong>6 years</strong><span>of Philadelphia records</span></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="wharton-video-section">
+        <div class="wharton-inner">
+          <div class="wharton-section-heading wharton-section-heading-light">
+            <p class="wharton-label">PROJECT WALKTHROUGH</p>
+            <h2>See the city through the data.</h2>
+            <p>The video gives the analysis a physical sense of place: collision locations, concentration, and severity become a citywide pattern rather than a spreadsheet of isolated rows.</p>
+          </div>
+          <figure class="wharton-video-figure">
+            <video controls playsinline preload="metadata" poster="assets/summer-program/philadelphia-crash-frequency.png">
+              <source src="assets/summer-program/philadelphia-collision-walkthrough.mp4" type="video/mp4">
+              Your browser does not support the project video.
+            </video>
+            <figcaption>Philadelphia collision frequency and severity walkthrough &middot; 2020&ndash;2025</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="wharton-results">
+        <div class="wharton-inner">
+          <div class="wharton-section-heading">
+            <p class="wharton-label">VISUAL RESULTS</p>
+            <h2>Frequency is not severity.</h2>
+            <p>Each map answers a different question. Read them together: where collisions accumulate, where average outcomes become more severe, and where serious-injury risk is concentrated relative to the local crash total.</p>
+          </div>
+
+          <div class="wharton-chart-stack">
+            <figure class="wharton-chart wharton-chart-wide">
+              <img src="assets/summer-program/philadelphia-crash-frequency.png" alt="Map of total Philadelphia crashes per 450 meter grid across 18 planning districts from 2020 to 2025" loading="lazy">
+              <figcaption><strong>01 &middot; Collision frequency</strong><span>Total crash locations mapped across the 18 planning districts.</span></figcaption>
+            </figure>
+            <div class="wharton-chart-pair">
+              <figure class="wharton-chart">
+                <img src="assets/summer-program/philadelphia-crash-severity.png" alt="Map of average Philadelphia crash severity level across 18 planning districts from 2020 to 2025" loading="lazy">
+                <figcaption><strong>02 &middot; Average severity</strong><span>Average KABCO severity level on the same 450 meter grid.</span></figcaption>
+              </figure>
+              <figure class="wharton-chart">
+                <img src="assets/summer-program/philadelphia-serious-injury-risk.png" alt="Map of Philadelphia serious-injury crash risk score across 18 planning districts from 2020 to 2025" loading="lazy">
+                <figcaption><strong>03 &middot; Serious-injury risk</strong><span>Level 2&ndash;4 crashes divided by the total mapped crash count.</span></figcaption>
+              </figure>
+            </div>
+          </div>
+
+          <div class="wharton-reading-grid">
+            <article>
+              <p class="wharton-label">READ 01</p>
+              <h3>Where crashes accumulate</h3>
+              <p>The frequency map highlights corridors and intersections that deserve attention because many collision events occur there.</p>
+            </article>
+            <article>
+              <p class="wharton-label">READ 02</p>
+              <h3>Where outcomes worsen</h3>
+              <p>The severity map adds injury consequence. Lower volume does not automatically mean lower harm.</p>
+            </article>
+            <article>
+              <p class="wharton-label">READ 03</p>
+              <h3>Where risk is concentrated</h3>
+              <p>The risk score shows the share of serious-injury crashes inside each grid, making frequency and severity comparable.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="wharton-districts">
+        <div class="wharton-inner">
+          <div class="wharton-section-heading wharton-section-heading-light">
+            <p class="wharton-label">DISTRICT STORIES</p>
+            <h2>Modeling makes the local question visible.</h2>
+            <p>The maps become more useful when paired with the street geometry, traffic context, and sample-size limits described in the project.</p>
+          </div>
+
+          <div class="wharton-district-grid">
+            <article>
+              <span class="wharton-district-index">01</span>
+              <h3>Upper &amp; Lower Far Northeast</h3>
+              <p>Roosevelt Boulevard (US-1), Bustleton Avenue, and Cottman Avenue create a wide, multi-lane setting with higher operating speeds and long crossing distances. The project also flags the very small sample size here, so the severity pattern needs cautious interpretation.</p>
+            </article>
+            <article>
+              <span class="wharton-district-index">02</span>
+              <h3>Upper Northwest</h3>
+              <p>Rail corridors and the Wissahickon side hills shape where streets and pedestrians can cross. Lincoln Drive, Wissahickon Avenue, and Allens Lane show why roadway context matters alongside a map value.</p>
+            </article>
+            <article>
+              <span class="wharton-district-index">03</span>
+              <h3>Upper North &amp; Broad Street</h3>
+              <p>Broad Street is a major north-south arterial, while Olney Transportation Center links transit and employment. A district view helps connect corridor scale to the people moving through it.</p>
+            </article>
+          </div>
+
+          <p class="wharton-note">These are data-informed interpretations from the project, not causal claims about a road or neighborhood. Frequency, severity, exposure, and missing variables should be considered together before intervention.</p>
+        </div>
+      </section>
+
+      <section class="wharton-policy">
+        <div class="wharton-inner">
+          <div class="wharton-section-heading">
+            <p class="wharton-label">FROM MODEL TO ACTION</p>
+            <h2>Turn maps into a public safety conversation.</h2>
+            <p>The project translates the visual patterns into practical directions for government and community partners.</p>
+          </div>
+
+          <div class="wharton-policy-list">
+            <article>
+              <span>01</span>
+              <div><h3>Public collision profiles</h3><p>Give each district a readable report with bike, truck, car, and pedestrian safety hazards.</p></div>
+            </article>
+            <article>
+              <span>02</span>
+              <div><h3>Targeted safety inspections</h3><p>In high-collision districts, inspect the roadway and traffic-control factors that the severity model identifies for closer attention.</p></div>
+            </article>
+            <article>
+              <span>03</span>
+              <div><h3>Time-aware vehicle management</h3><p>Use crash timing as evidence when considering a &ldquo;no truck period&rdquo; or &ldquo;no bike period&rdquo; for a specific corridor or time window.</p></div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="wharton-methods">
+        <div class="wharton-inner">
+          <div class="wharton-method-grid">
+            <div>
+              <p class="wharton-label">HOW IT WAS BUILT</p>
+              <h2>A model is only useful when its limits stay visible.</h2>
+              <p>The analysis uses logistic regression with LASSO, relaxed LASSO, backward elimination, and a final model to examine collision severity. Categorical regressions and spatial aggregation help compare the 18 planning districts.</p>
+            </div>
+            <div class="wharton-limit-list">
+              <h3>Important limits</h3>
+              <p><strong>Grid averaging.</strong> Averaging severities within a grid can hide variation between individual crashes.</p>
+              <p><strong>Imbalanced outcomes.</strong> Fatal and severe crashes represent a small share of the records, so rare outcomes require care.</p>
+              <p><strong>Incomplete variables.</strong> Missing or limited fields can constrain what the model can explain.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="wharton-proof">
+        <div class="wharton-inner">
+          <div class="wharton-proof-grid">
+            <img class="wharton-team-photo" src="assets/summer-program/team-presentation.jpeg" alt="Student presenting Philadelphia crash analysis maps to a classroom" loading="lazy">
+            <div class="wharton-proof-copy">
+              <p class="wharton-label">PRESENTATION &amp; EVIDENCE</p>
+              <h2>From analysis to a room full of questions.</h2>
+              <p>The project was built to be communicated: maps make the spatial pattern legible, the video makes the collision story immediate, and the full report keeps the assumptions and methods available for review.</p>
+              <a class="wharton-button wharton-button-dark" href="assets/summer-program/philadelphia-collision-analysis.pdf" target="_blank" rel="noopener">Read the full project PDF <span aria-hidden="true">&rarr;</span></a>
+            </div>
+          </div>
+          <div class="wharton-certificate-row">
+            <img src="assets/summer-program/data-science-academy-certificate.png" alt="Wharton Global Youth Program Data Science Academy completion certificate" loading="lazy">
+            <p><strong>Wharton Data Science Academy</strong><br>Data-driven modeling, visualization, and communication in a real urban safety case.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
