@@ -5437,6 +5437,423 @@ mark {
   }
 }
 
+/* Athletic page editorial layout */
+.athletic-page {
+  background: #f2f3ef;
+}
+
+.athletic-intro,
+.athletic-film-inner,
+.athletic-competition-grid,
+.athletic-team,
+.athletic-endurance {
+  width: min(100% - 72px, var(--max));
+  margin: 0 auto;
+}
+
+.athletic-intro {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+  gap: clamp(54px, 8vw, 112px);
+  align-items: end;
+  padding: 112px 0 108px;
+}
+
+.athletic-eyebrow {
+  margin: 0 0 14px;
+  color: var(--orange);
+  font-size: 13px;
+  font-weight: 900;
+  letter-spacing: 0;
+  line-height: 1.3;
+}
+
+.athletic-intro h2,
+.athletic-film h2,
+.athletic-competition h2,
+.athletic-team h2,
+.athletic-endurance h2 {
+  margin: 0;
+  font-size: clamp(38px, 5vw, 70px);
+  line-height: 1.02;
+  letter-spacing: 0;
+}
+
+.athletic-intro-copy > p:last-child {
+  max-width: 670px;
+  margin: 28px 0 0;
+  color: #525a5e;
+  font-size: clamp(18px, 1.65vw, 22px);
+  line-height: 1.65;
+}
+
+.athletic-principles {
+  border-top: 1px solid #b9c0bd;
+}
+
+.athletic-principles article {
+  display: grid;
+  grid-template-columns: 40px minmax(120px, 0.72fr) minmax(0, 1fr);
+  gap: 18px;
+  align-items: baseline;
+  padding: 20px 0;
+  border-bottom: 1px solid #b9c0bd;
+}
+
+.athletic-principles span {
+  color: var(--orange);
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.athletic-principles h3,
+.athletic-principles p {
+  margin: 0;
+}
+
+.athletic-principles h3 {
+  font-size: 17px;
+}
+
+.athletic-principles p {
+  color: #5e6669;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.athletic-film {
+  padding: 104px 0 112px;
+  color: var(--white);
+  background: #071d33;
+}
+
+.athletic-film-heading {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(300px, 0.55fr);
+  gap: 60px;
+  align-items: end;
+  margin-bottom: 46px;
+}
+
+.athletic-film-heading > p:last-child {
+  margin: 0;
+  color: #bfcbd4;
+  font-size: 17px;
+  line-height: 1.65;
+}
+
+.season-film-frame {
+  margin: 0;
+}
+
+.season-film-frame video {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  background: #02070b;
+  box-shadow: 0 24px 58px rgba(0, 0, 0, 0.34);
+}
+
+.season-film-frame figcaption {
+  margin-top: 16px;
+  color: #92a5b5;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.athletic-competition {
+  padding: 118px 0;
+  background: var(--white);
+}
+
+.athletic-competition-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.38fr) minmax(330px, 0.62fr);
+  gap: clamp(46px, 7vw, 96px);
+  align-items: center;
+}
+
+.athletic-action-image {
+  margin: 0;
+}
+
+.athletic-action-image img {
+  width: 100%;
+  aspect-ratio: 1.25 / 1;
+  object-fit: cover;
+  object-position: 48% center;
+  box-shadow: var(--shadow);
+}
+
+.athletic-competition-copy > p:nth-of-type(2) {
+  margin: 28px 0 36px;
+  color: #596166;
+  line-height: 1.7;
+}
+
+.athletic-focus-list {
+  margin: 0;
+  border-top: 1px solid #c8cdcb;
+}
+
+.athletic-focus-list > div {
+  display: grid;
+  grid-template-columns: 92px minmax(0, 1fr);
+  gap: 22px;
+  padding: 18px 0;
+  border-bottom: 1px solid #c8cdcb;
+}
+
+.athletic-focus-list dt {
+  color: var(--navy);
+  font-weight: 900;
+}
+
+.athletic-focus-list dd {
+  margin: 0;
+  color: #626a6d;
+  font-size: 15px;
+}
+
+.athletic-team {
+  padding: 112px 0 124px;
+}
+
+.athletic-section-heading {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(330px, 0.65fr);
+  gap: 70px;
+  align-items: end;
+  margin-bottom: 52px;
+}
+
+.athletic-section-heading .athletic-eyebrow {
+  grid-column: 1 / -1;
+  margin-bottom: -48px;
+}
+
+.athletic-section-heading > p:last-child {
+  margin: 0;
+  color: #596166;
+  line-height: 1.7;
+}
+
+.athletic-team-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.45fr) minmax(260px, 0.55fr);
+  grid-template-rows: auto auto;
+  gap: 24px;
+}
+
+.athletic-photo {
+  position: relative;
+  min-width: 0;
+  margin: 0;
+  overflow: hidden;
+  background: #dfe3df;
+}
+
+.athletic-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 420ms ease;
+}
+
+.athletic-photo:hover img {
+  transform: scale(1.018);
+}
+
+.athletic-photo figcaption {
+  position: absolute;
+  inset: auto 0 0;
+  padding: 54px 22px 18px;
+  color: var(--white);
+  background: linear-gradient(to top, rgba(3, 15, 26, 0.82), rgba(3, 15, 26, 0));
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.athletic-photo-team {
+  grid-row: span 2;
+  min-height: 650px;
+}
+
+.athletic-photo-team img {
+  object-position: center;
+}
+
+.athletic-photo-awards,
+.athletic-photo-travel {
+  min-height: 313px;
+}
+
+.athletic-endurance {
+  display: grid;
+  grid-template-columns: minmax(280px, 0.62fr) minmax(0, 1.38fr);
+  gap: clamp(52px, 7vw, 98px);
+  padding: 118px 0 132px;
+}
+
+.athletic-endurance-copy {
+  position: sticky;
+  top: 40px;
+  align-self: start;
+}
+
+.athletic-endurance-copy > p:last-child {
+  margin: 28px 0 0;
+  color: #596166;
+  line-height: 1.7;
+}
+
+.athletic-endurance-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.athletic-photo-rain {
+  grid-column: 1 / -1;
+  aspect-ratio: 1.65 / 1;
+}
+
+.athletic-photo-finish,
+.athletic-photo-plaque {
+  aspect-ratio: 0.78 / 1;
+}
+
+.athletic-photo-finish img {
+  object-position: center 48%;
+}
+
+.athletic-photo-plaque img {
+  object-position: center;
+}
+
+@media (max-width: 900px) {
+  .athletic-intro,
+  .athletic-film-heading,
+  .athletic-competition-grid,
+  .athletic-section-heading,
+  .athletic-endurance {
+    grid-template-columns: 1fr;
+  }
+
+  .athletic-intro {
+    align-items: start;
+  }
+
+  .athletic-film-heading,
+  .athletic-section-heading {
+    gap: 24px;
+  }
+
+  .athletic-section-heading .athletic-eyebrow {
+    grid-column: auto;
+    margin-bottom: -4px;
+  }
+
+  .athletic-competition-grid {
+    gap: 54px;
+  }
+
+  .athletic-action-image img {
+    aspect-ratio: 1.55 / 1;
+  }
+
+  .athletic-endurance {
+    gap: 48px;
+  }
+
+  .athletic-endurance-copy {
+    position: static;
+    max-width: 700px;
+  }
+}
+
+@media (max-width: 640px) {
+  .athletic-intro,
+  .athletic-film-inner,
+  .athletic-competition-grid,
+  .athletic-team,
+  .athletic-endurance {
+    width: min(100% - 34px, var(--max));
+  }
+
+  .athletic-intro,
+  .athletic-team {
+    padding-top: 78px;
+    padding-bottom: 82px;
+  }
+
+  .athletic-film,
+  .athletic-competition {
+    padding-top: 80px;
+    padding-bottom: 84px;
+  }
+
+  .athletic-endurance {
+    padding-top: 82px;
+    padding-bottom: 94px;
+  }
+
+  .athletic-principles article {
+    grid-template-columns: 30px minmax(100px, 0.7fr) minmax(0, 1fr);
+    gap: 12px;
+  }
+
+  .athletic-principles p,
+  .athletic-focus-list dd {
+    font-size: 14px;
+  }
+
+  .season-film-frame video {
+    box-shadow: 0 16px 38px rgba(0, 0, 0, 0.3);
+  }
+
+  .athletic-action-image img {
+    aspect-ratio: 1 / 1;
+  }
+
+  .athletic-team-grid {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    gap: 12px;
+  }
+
+  .athletic-photo-team {
+    grid-column: 1 / -1;
+    grid-row: auto;
+    min-height: 300px;
+  }
+
+  .athletic-photo-awards,
+  .athletic-photo-travel {
+    min-height: 230px;
+  }
+
+  .athletic-photo figcaption {
+    padding: 42px 14px 13px;
+    font-size: 12px;
+  }
+
+  .athletic-endurance-grid {
+    gap: 12px;
+  }
+
+  .athletic-photo-rain {
+    aspect-ratio: 1.25 / 1;
+  }
+
+  .athletic-photo-finish,
+  .athletic-photo-plaque {
+    aspect-ratio: 0.7 / 1;
+  }
+}
+
 /* Wharton Data Science project page */
 .wharton-page {
   color: var(--ink);
