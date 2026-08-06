@@ -4,8 +4,34 @@
 
   silentHeroes.forEach((video) => {
     video.muted = true;
+    video.defaultMuted = true;
+    video.autoplay = true;
+    video.loop = true;
+    video.playsInline = true;
     video.controls = false;
-    video.play().catch(() => {});
+
+    const resetToStart = () => {
+      try {
+        video.currentTime = 0;
+      } catch (_) {
+        // The media element may not have a seekable timeline yet.
+      }
+    };
+
+    const playHero = (reset = false) => {
+      if (reset) resetToStart();
+      video.play().catch(() => {});
+    };
+
+    video.addEventListener("loadedmetadata", () => playHero(true), { once: true });
+    video.addEventListener("loadeddata", () => playHero(false), { once: true });
+    video.addEventListener("canplay", () => playHero(false), { once: true });
+    window.addEventListener("pageshow", () => playHero(true));
+    document.addEventListener("visibilitychange", () => {
+      if (!document.hidden) playHero(false);
+    });
+
+    playHero(true);
   });
 
   const updateCard = (card) => {
