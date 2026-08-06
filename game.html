@@ -7,7 +7,7 @@
     <meta name="description" content="Brawl Stars competitive strategy portfolio by Allen Zheng.">
     <link rel="stylesheet" href="styles.css">
   </head>
-  <body>
+  <body class="game-page">
     <header class="site-header solid">
       <a class="brand" href="index.html">ALLEN ZHENG</a>
       <nav class="site-nav" aria-label="Primary navigation">
@@ -20,16 +20,22 @@
       </nav>
     </header>
 
-    <main class="media-page">
-      <section class="simple-title">
+    <main class="media-page game-main">
+      <section class="simple-title game-title">
+        <p class="game-eyebrow">COMPETITIVE PLAY · BRAWL STARS</p>
         <h1>GAME</h1>
         <p>A collection of competitive Brawl Stars gameplay highlighting strategic decision-making, adaptability, and teamwork under pressure.</p>
+        <div class="game-title-meta" aria-label="Competitive play themes">
+          <span>Fast decisions</span>
+          <span>Precise execution</span>
+          <span>Team communication</span>
+        </div>
       </section>
 
-      <section class="lead-images">
+      <section class="lead-images game-proof" aria-label="Competitive achievements">
         <figure class="lead-proof">
           <img src="assets/Brawl%20Stars/Brawl%20star.png" alt="Allen's Brawler Showcase">
-          <figcaption>30 bralwers 1000 trophies</figcaption>
+          <figcaption>30 brawlers at 1,000 trophies</figcaption>
         </figure>
         <figure class="lead-proof">
           <img src="assets/Brawl%20Stars/Top%20200%20finished%20in%20US.jpg" alt="Top 200 US leaderboard evidence">
@@ -37,31 +43,108 @@
         </figure>
       </section>
 
-      <section class="video-grid two-by-two" aria-label="Brawl Stars clips">
+      <section class="game-video-section" aria-labelledby="game-clips-title">
+        <div class="game-section-heading">
+          <p class="game-eyebrow">READ THE PLAY</p>
+          <h2 id="game-clips-title">Every clip starts with a decision.</h2>
+          <p>The highlight is only the final second. Before it, I am reading the map, tracking cooldowns, and creating a winning option for the team.</p>
+        </div>
+        <div class="video-grid two-by-two game-video-grid">
         <article class="video-tile" data-video-card>
-          <video src="assets/Brawl%20Stars/mandi.mp4" loop playsinline preload="auto" data-preview-time="12"></video>
+          <video src="assets/Brawl%20Stars/mandi.mp4" autoplay muted loop playsinline preload="auto" data-start-at-zero></video>
           <button class="tile-play" type="button" data-video-play aria-label="Play Mandi clip"><span data-play-icon>Play</span></button>
           <button class="tile-mute" type="button" data-video-mute><span data-mute-icon>Muted</span></button>
           <p class="video-caption">Knockout Mandi 1 vs 3</p>
         </article>
         <article class="video-tile" data-video-card>
-          <video src="assets/Brawl%20Stars/kenji-h264.mp4" loop playsinline preload="auto" data-preview-time="4"></video>
+          <video src="assets/Brawl%20Stars/kenji-h264.mp4" autoplay muted loop playsinline preload="auto" data-start-at-zero></video>
           <button class="tile-play" type="button" data-video-play aria-label="Play Kenji clip"><span data-play-icon>Play</span></button>
           <button class="tile-mute" type="button" data-video-mute><span data-mute-icon>Muted</span></button>
           <p class="video-caption">Knockout Kenji 1 vs 3</p>
         </article>
         <article class="video-tile" data-video-card>
-          <video src="assets/Brawl%20Stars/kaze-h264.mp4" loop playsinline preload="auto" data-preview-time="2"></video>
+          <video src="assets/Brawl%20Stars/kaze-h264.mp4" autoplay muted loop playsinline preload="auto" data-start-at-zero></video>
           <button class="tile-play" type="button" data-video-play aria-label="Play Kaze clip"><span data-play-icon>Play</span></button>
           <button class="tile-mute" type="button" data-video-mute><span data-mute-icon>Muted</span></button>
           <p class="video-caption">Brawl ball Kaze 1 vs 3</p>
         </article>
         <article class="video-tile" data-video-card>
-          <video src="assets/Brawl%20Stars/mandi-gem-h264.mp4" loop playsinline preload="auto" data-preview-time="3"></video>
+          <video src="assets/Brawl%20Stars/mandi-gem-h264.mp4" autoplay muted loop playsinline preload="auto" data-start-at-zero></video>
           <button class="tile-play" type="button" data-video-play aria-label="Play Mandi gem clip"><span data-play-icon>Play</span></button>
           <button class="tile-mute" type="button" data-video-mute><span data-mute-icon>Muted</span></button>
-          <p class="video-caption">Gem Grab Mandi1 vs 3</p>
+          <p class="video-caption">Gem Grab Mandi 1 vs 3</p>
         </article>
+        </div>
+      </section>
+
+      <section class="game-mindset" aria-labelledby="game-mindset-title">
+        <div class="game-section-heading game-section-heading-wide">
+          <p class="game-eyebrow">THE MINDSET</p>
+          <h2 id="game-mindset-title">When the match gets chaotic, the process gets simple.</h2>
+          <p>Competitive play has taught me to slow down the moment before the action. I stay calm, identify the highest-value move, and turn pressure into a sequence I can execute.</p>
+        </div>
+        <div class="game-principle-grid">
+          <article>
+            <span class="game-number">01</span>
+            <h3>Read the board</h3>
+            <p>Health, ammo, positioning, and the opponent's escape route all change the answer. I scan the whole map before committing to a fight.</p>
+          </article>
+          <article>
+            <span class="game-number">02</span>
+            <h3>Manage the clock</h3>
+            <p>Gadget, Super, and Hypercharge are resources. The strongest play is often the one that saves the right tool for the next ten seconds.</p>
+          </article>
+          <article>
+            <span class="game-number">03</span>
+            <h3>Make the combo count</h3>
+            <p>In a short window, movement and timing have to become automatic. A clean combo converts a small opening into control of the round.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="game-decision-loop" aria-labelledby="decision-loop-title">
+        <div class="game-decision-inner">
+          <div class="game-section-heading game-section-heading-light">
+            <p class="game-eyebrow">THE DECISION LOOP</p>
+            <h2 id="decision-loop-title">Scan. Calculate. Execute. Communicate.</h2>
+            <p>The same loop keeps the game legible when every player is moving at once.</p>
+          </div>
+          <ol class="game-loop-list">
+            <li>
+              <span>01</span>
+              <div><h3>Scan</h3><p>See the lanes, cooldowns, health bars, and win condition.</p></div>
+            </li>
+            <li>
+              <span>02</span>
+              <div><h3>Calculate</h3><p>Choose the safest line that creates the most pressure.</p></div>
+            </li>
+            <li>
+              <span>03</span>
+              <div><h3>Execute</h3><p>Link movement, gadget, Super, and Hypercharge without hesitation.</p></div>
+            </li>
+            <li>
+              <span>04</span>
+              <div><h3>Communicate</h3><p>Call the threat, the rotation, and the next play before it happens.</p></div>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="game-teamwork" aria-labelledby="game-teamwork-title">
+        <div class="game-teamwork-copy">
+          <p class="game-eyebrow">BEYOND THE CLIP</p>
+          <h2 id="game-teamwork-title">The responsibility is shared, even when the moment is mine.</h2>
+          <p>In close matches, I use voice chat to keep teammates aware of pressure, rotations, and safe space. Good communication makes individual mechanics useful: it helps the team understand where to move, when to wait, and when to commit together.</p>
+        </div>
+        <div class="game-teamwork-points">
+          <div><strong>Calm analysis</strong><span>Stay clear when the round turns against us.</span></div>
+          <div><strong>Rapid execution</strong><span>Turn a narrow opening into a coordinated play.</span></div>
+          <div><strong>Team leadership</strong><span>Share information early enough for teammates to act.</span></div>
+        </div>
+      </section>
+
+      <section class="game-closing" aria-label="Game portfolio closing statement">
+        <p>Pressure is not the absence of options. It is the test of whether I can find the right one.</p>
       </section>
     </main>
 

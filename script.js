@@ -34,16 +34,37 @@
     const muteButton = card.querySelector("[data-video-mute]");
     if (!video) return;
 
+    const startsAtZero = video.hasAttribute("data-start-at-zero");
+    const resetToStart = () => {
+      try {
+        video.currentTime = 0;
+      } catch (_) {
+        // The media element may not have a seekable timeline yet.
+      }
+    };
+
     video.muted = true;
     video.controls = false;
     video.pause();
-    video.addEventListener("loadedmetadata", () => {
-      const requestedPreviewTime = Number(video.dataset.previewTime || card.dataset.previewTime || 0.2);
-      const previewTime = Number.isFinite(requestedPreviewTime) ? requestedPreviewTime : 0.2;
-      if (video.currentTime === 0 && Number.isFinite(video.duration) && video.duration > 0.2) {
-        video.currentTime = Math.min(Math.max(previewTime, 0.1), video.duration - 0.1);
-      }
-    }, { once: true });
+    if (startsAtZero) {
+      const playFromStart = () => {
+        resetToStart();
+        video.play().catch(() => {});
+      };
+
+      video.autoplay = true;
+      video.addEventListener("loadedmetadata", playFromStart, { once: true });
+      window.addEventListener("pageshow", playFromStart);
+      if (video.readyState >= 1) playFromStart();
+    } else {
+      video.addEventListener("loadedmetadata", () => {
+        const requestedPreviewTime = Number(video.dataset.previewTime || card.dataset.previewTime || 0.2);
+        const previewTime = Number.isFinite(requestedPreviewTime) ? requestedPreviewTime : 0.2;
+        if (video.currentTime === 0 && Number.isFinite(video.duration) && video.duration > 0.2) {
+          video.currentTime = Math.min(Math.max(previewTime, 0.1), video.duration - 0.1);
+        }
+      }, { once: true });
+    }
     updateCard(card);
 
     const togglePlay = async () => {
