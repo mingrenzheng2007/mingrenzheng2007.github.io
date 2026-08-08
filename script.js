@@ -4,11 +4,17 @@
 
   silentHeroes.forEach((video) => {
     video.muted = true;
+    video.controls = false;
+
+    if (!video.hasAttribute("data-home-hero")) {
+      video.play().catch(() => {});
+      return;
+    }
+
     video.defaultMuted = true;
     video.autoplay = true;
     video.loop = true;
     video.playsInline = true;
-    video.controls = false;
 
     const resetToStart = () => {
       try {
