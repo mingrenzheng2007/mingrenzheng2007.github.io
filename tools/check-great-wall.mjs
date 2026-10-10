@@ -1,0 +1,12 @@
+import {readFileSync,existsSync} from 'node:fs';
+import {execFileSync} from 'node:child_process';
+const files=['great-wall.js','great-wall-core.js','great-wall-store.js','great-wall-scores.js','great-wall-data.js','script.js'];
+for(const file of files)execFileSync(process.execPath,['--check',file],{stdio:'inherit'});
+const html=readFileSync('great-wall.html','utf8');
+const ids=[...html.matchAll(/\bid="([^"]+)"/g)].map(m=>m[1]);
+if(new Set(ids).size!==ids.length)throw new Error('Duplicate HTML IDs');
+for(const m of html.matchAll(/href="#(gwi?-[^"]+)"/g))if(!ids.includes(m[1]))throw new Error('Missing fragment target: '+m[1]);
+const local=[...html.matchAll(/(?:src|href)="([^"#]+)"/g)].map(m=>m[1]).filter(x=>!/^https?:/.test(x));
+for(const file of local)if(!existsSync(file))throw new Error('Missing referenced file: '+file);
+for(const id of ['map','journal','workshop','gallery','history','forgotten'])if(!html.includes('id="panel-'+id+'"'))throw new Error('Missing tab: '+id);
+console.log('Checked '+files.length+' JavaScript files, six functional sections, and local page dependencies.');

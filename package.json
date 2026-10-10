@@ -1,0 +1,9 @@
+{
+  "name": "allen-portfolio",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "check": "node tools/check-great-wall.mjs",
+    "test": "node --test tests/great-wall.test.mjs"
+  }
+}
