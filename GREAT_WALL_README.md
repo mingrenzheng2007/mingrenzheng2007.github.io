@@ -2,6 +2,8 @@
 
 Open `great-wall.html` from **Great Wall** in the homepage navigation. The original `academic.html` is unchanged. The project follows the portfolio's navy and orange theme and supports desktop and mobile layouts.
 
+The page uses the portfolio's shared header, bold typography, and photographic cover. Inside the tools, ivory cards, forest-green controls, and two original mini-program illustrations preserve the field journal's warmer visual identity. The illustrations in `assets/great-wall/green-wall-mark.png` and `watchtower-mascot.png` are reused from the source mini program.
+
 ## Local preview and checks
 
 Serve the directory over HTTP rather than opening the HTML file directly:

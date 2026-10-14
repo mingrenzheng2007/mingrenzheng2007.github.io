@@ -221,7 +221,7 @@ function renderWorkshopResult() {
   const current=state.currentCreation;
   $('creation-preview').innerHTML=current?
     '<img class="gw-result-image" src="'+photoUrl(current)+'" alt="'+e(current.siteName+' · '+current.designType)+'" data-action="creation-photo" data-id="'+current.id+'"><div class="gw-result-actions"><button class="gw-button primary" data-action="download" data-id="'+current.id+'">'+icon('download')+'Download design</button><a href="#history" class="gw-button secondary">'+icon('record')+'Design archive</a><button class="gw-button secondary" data-action="share" data-id="'+current.id+'" '+(current.published?'disabled':'')+'>'+icon('share')+(current.published?'Shared':'Share publicly')+'</button></div>':
-    '<div class="gw-preview-empty">'+icon('tower')+'<h4>A keepsake from the loess hills.</h4><p>Choose a site and a keepsake type.<br>Your first Great Wall design starts here.</p></div>';
+    '<div class="gw-preview-empty"><img class="gw-keepsake-mascot" src="assets/great-wall/watchtower-mascot.png" alt="" aria-hidden="true"><h4>A keepsake from the loess hills.</h4><p>Choose a site and a keepsake type.<br>Your first Great Wall design starts here.</p></div>';
   $('recent-creations').innerHTML=state.creations.length?state.creations.slice(0,5).map(c=>'<button data-action="select-creation" data-id="'+c.id+'"><img src="'+photoUrl(c)+'" alt="'+e(c.designType)+'" loading="lazy"><span>'+e(c.designType)+'</span></button>').join(''):'<p class="gw-input-note">Completed designs are saved automatically in this browser.</p>';
   $('workshop-inputs').disabled=Boolean(state.generation);
   renderGenerationStatus();
