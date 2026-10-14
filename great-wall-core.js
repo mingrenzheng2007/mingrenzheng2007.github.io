@@ -1,7 +1,28 @@
 export const API_BASE = 'https://47.103.59.118/ai';
 export const IMAGE_MODEL = 'gpt-image-2';
-export const DESIGN_TYPES = ['冰箱贴', '书签', '明信片', '帆布包', '手机壁纸'];
-export const KIND_LABELS = {checkin:'足迹', patrol:'巡检', story:'故事', creation:'文创'};
+export const DESIGN_TYPES = ['Fridge magnet', 'Bookmark', 'Postcard', 'Tote bag', 'Phone wallpaper'];
+export const KIND_LABELS = {checkin:'Visit', patrol:'Patrol', story:'Story', creation:'Design'};
+
+// Keep existing browser archives and shared items readable after the language change.
+const legacyLabels = {'冰箱贴':'Fridge magnet','书签':'Bookmark','明信片':'Postcard','帆布包':'Tote bag','手机壁纸':'Phone wallpaper','足迹':'Visit','巡检':'Patrol','故事':'Story','文创':'Design','志愿者':'Volunteer','文保员':'Warden'};
+export const normalizeDesignType = value => legacyLabels[value] || value;
+export function normalizeArchiveEntry(item,sites) {
+  if(!item)return item;
+  const site=sites.find(s=>s.id===item.siteId);
+  const result={...item,siteName:site?.name || item.siteName,designType:normalizeDesignType(item.designType),roleText:item.role==='warden'?'Warden':item.role==='volunteer'?'Volunteer':normalizeDesignType(item.roleText)};
+  if(item.title && site && item.siteName && item.title.startsWith(item.siteName+' · '))result.title=site.name+' · '+normalizeDesignType(item.title.slice(item.siteName.length+3));
+  return result;
+}
+
+export function serviceErrorMessage(value,status=0) {
+  const text=String(value || '');
+  if(!/[\p{Script=Han}]/u.test(text))return text || 'Request failed (HTTP '+status+').';
+  if(/不存在|已过期/.test(text))return 'The task or resource was not found or has expired.';
+  if(/未登记|未注册|模型不支持/.test(text))return 'The required model is not registered or supported. Contact the site maintainer.';
+  if(/超时/.test(text))return 'The service request timed out. Try again later.';
+  if(/频繁|限流|限制/.test(text))return 'The service limit was reached. Wait a minute and try again.';
+  return 'The service could not complete this request. Try again later.';
+}
 
 export function escapeHtml(value) {
   return String(value == null ? '' : value).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -29,7 +50,7 @@ export function dateKey(value = Date.now()) {
 }
 
 export function formatTime(value) {
-  return new Intl.DateTimeFormat('zh-CN',{timeZone:'Asia/Shanghai',month:'short',day:'numeric',hour:'2-digit',minute:'2-digit'}).format(new Date(value));
+  return new Intl.DateTimeFormat('en-GB',{timeZone:'Asia/Shanghai',month:'short',day:'numeric',hour:'2-digit',minute:'2-digit'}).format(new Date(value));
 }
 
 export function distanceMeters(a,b) {
@@ -40,8 +61,8 @@ export function distanceMeters(a,b) {
 }
 
 export function formatDistance(value) {
-  if (value == null) return '尚未获取位置';
-  return value < 1000 ? value + ' 米' : (value / 1000).toFixed(1) + ' 公里';
+  if (value == null) return 'Location not set';
+  return value < 1000 ? value + ' m' : (value / 1000).toFixed(1) + ' km';
 }
 
 export function mergeRecords(local = [], remote = []) {
@@ -65,19 +86,21 @@ export function visitStats(sites,records,date = dateKey()) {
 
 export function creationPrompt(site,designType,note,count) {
   return [
-    '请生成一张完整的府谷长城文创成品设计图。',
-    '主题点位：' + site.name + '。历史线索：' + site.story,
-    '文创类型：' + designType + '。',
-    count ? '用户提供 ' + count + ' 张参考照片。保留主体结构；多图时综合所有照片的纹理、色彩与局部元素。' : '',
-    '表现府谷黄土山地、长城墩台与守护足迹，暖色清晰，适合学生和志愿者分享。',
-    '不要出现真实品牌、二维码、联系方式或误导性官方标识；不要误画成北京旅游长城。',
-    note ? '风格补充：' + note : '',
-    '可包含“墩台志”字样。只输出一张作品，不生成网站界面。'
+    'Create one complete, polished Great Wall keepsake design.',
+    'Site: '+site.name+'. Historical context: '+site.story,
+    'Keepsake type: '+normalizeDesignType(designType)+'.',
+    count ? 'The user supplied '+count+' reference '+(count===1?'photo. ':'photos. ')+'Preserve the main structure. Combine the textures, colors, and details from all supplied photos.' : '',
+    'Depict the loess hills, earthen watchtowers, and preservation stories of Fugu, Shaanxi, China. Use clear, warm colors suitable for students and volunteers.',
+    'Keep the architecture faithful to Fugu; do not substitute the tourist Great Wall near Beijing. Do not add real brands, QR codes, contact details, or misleading official emblems.',
+    note ? 'User style direction: '+note : '',
+    'All lettering and captions in the image must be in English. Translate any text requested in another language into English. Do not use Chinese characters or bilingual captions.',
+    'If a title is included, use "Fugu Great Wall Guardian". Output one finished design, not a website interface.'
   ].filter(Boolean).join('\n');
 }
 
 export function generationSize(type) {
-  return type === '手机壁纸' || type === '书签' ? '1024x1536' : type === '明信片' ? '1536x1024' : '1024x1024';
+  type=normalizeDesignType(type);
+  return type === 'Phone wallpaper' || type === 'Bookmark' ? '1024x1536' : type === 'Postcard' ? '1536x1024' : '1024x1024';
 }
 
 export async function request(path, options = {}) {
@@ -94,17 +117,19 @@ export async function request(path, options = {}) {
       headers:{...(!isForm && body ? {'Content-Type':'application/json'} : {}),...options.headers},
       body:body ? isForm ? body : JSON.stringify(body) : undefined
     });
-    if (response.status === 429) throw new Error('生成请求较多，请等一分钟再试。');
+    if (response.status === 429) throw new Error('Too many generation requests. Wait a minute and try again.');
     let payload;
-    try { payload = await response.json(); } catch { throw new Error('服务响应异常（HTTP ' + response.status + '），请稍后重试。'); }
+    try { payload = await response.json(); } catch { throw new Error('Unexpected service response (HTTP ' + response.status + '). Try again later.'); }
     if (!response.ok || !payload.ok) {
-      throw new Error(payload.error || '请求失败（HTTP ' + response.status + '）');
+      console.warn('Great Wall service error',{path,status:response.status,error:payload.error});
+      const error=new Error(serviceErrorMessage(payload.error,response.status));error.status=response.status;
+      throw error;
     }
     return path === '/health' ? payload : payload.data;
   } catch(error) {
-    if (signal?.aborted) throw new DOMException('已停止等待','AbortError');
-    if (error.name === 'AbortError') throw new Error('请求超时，请稍后重试。');
-    if (error instanceof TypeError) throw new Error('无法连接长城服务，请检查网络后重试。');
+    if (signal?.aborted) throw new DOMException('Waiting stopped','AbortError');
+    if (error.name === 'AbortError') throw new Error('The request timed out. Try again later.');
+    if (error instanceof TypeError) throw new Error('Cannot connect to the Great Wall service. Check your connection and try again.');
     throw error;
   } finally {
     clearTimeout(timeout);

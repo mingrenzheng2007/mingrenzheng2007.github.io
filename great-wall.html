@@ -1,10 +1,10 @@
 <!doctype html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>ALLEN ZHENG | FUGU GREAT WALL GUARDIAN</title>
-  <meta name="description" content="墩台志：探索府谷长城，记录守护足迹，分享故事，创作 AI 长城礼物。">
+  <meta name="description" content="Explore the Fugu Great Wall, record observations, share heritage stories, and design your own AI-crafted keepsakes.">
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="assets/vendor/leaflet/leaflet.css">
   <link rel="stylesheet" href="great-wall.css">
@@ -29,7 +29,7 @@
     <symbol id="gwi-leaf" viewBox="0 0 24 24"><path d="M4 19C0 8 13 3 21 3c0 8-4 20-15 17m-3 2 14-14"/></symbol>
     <symbol id="gwi-close" viewBox="0 0 24 24"><path d="m6 6 12 12M6 18 18 6"/></symbol>
   </defs></svg>
-  <a class="gw-skip" href="#gw-workspace">跳到长城工具</a>
+  <a class="gw-skip" href="#gw-workspace">Skip to the Great Wall tools</a>
   <header class="site-header light">
     <a class="brand" href="index.html">ALLEN ZHENG</a>
     <nav class="site-nav" aria-label="Primary navigation">
@@ -42,103 +42,103 @@
   <main>
     <section class="gw-hero" aria-labelledby="gw-title">
       <div class="gw-hero-copy">
-        <a class="gw-back" href="index.html">HOME / 墩台志</a>
+        <a class="gw-back" href="index.html">HOME / Site journal</a>
         <p class="gw-eyebrow">FUGU GREAT WALL GUARDIAN</p>
-        <h1 id="gw-title">让每一座墩台，<br>被看见<span>。</span></h1>
-        <p class="gw-hero-description">用地图、巡检记录与 AI 文创，<br class="gw-desktop-break">连接府谷长城的故事。</p>
+        <h1 id="gw-title">Let every watchtower<br>be remembered<span>.</span></h1>
+        <p class="gw-hero-description">Explore, document, and create —<br class="gw-desktop-break">keep the stories of the Fugu Great Wall alive.</p>
         <div class="gw-hero-actions">
-          <a href="#map" class="gw-button primary">探索长城 <svg class="gw-icon"><use href="#gwi-arrow"/></svg></a>
-          <a href="#workshop" class="gw-button on-dark">创作文创 <svg class="gw-icon"><use href="#gwi-spark"/></svg></a>
+          <a href="#map" class="gw-button primary">Explore the wall <svg class="gw-icon"><use href="#gwi-arrow"/></svg></a>
+          <a href="#workshop" class="gw-button on-dark">Create a keepsake <svg class="gw-icon"><use href="#gwi-spark"/></svg></a>
         </div>
-        <div class="gw-hero-foot"><span>知长城</span><i></i><span>走长城</span><i></i><span>讲长城</span></div>
+        <div class="gw-hero-foot"><span>Discover</span><i></i><span>Explore</span><i></i><span>Share</span></div>
       </div>
       <div class="gw-hero-photo">
-        <img src="assets/great-wall/zhuanjiaolou.jpg" alt="府谷转角楼墩台与周围黄土山地" fetchpriority="high">
-        <div class="gw-hero-caption"><span>黄土之间，长城仍在。</span><small>府谷 · 黄河边墙</small></div>
-        <a class="gw-photo-credit" href="https://changcheng.ctnews.com.cn/2025-02/18/content_170590.html" target="_blank" rel="noopener">图片来源：长城国家文化公园</a>
+        <img src="assets/great-wall/zhuanjiaolou.jpg" alt="Zhuanjiaolou Watchtower in the loess hills of Fugu" fetchpriority="high">
+        <div class="gw-hero-caption"><span>The wall endures among the loess hills.</span><small>Fugu · Yellow River frontier</small></div>
+        <a class="gw-photo-credit" href="https://changcheng.ctnews.com.cn/2025-02/18/content_170590.html" target="_blank" rel="noopener">Photo: Great Wall National Cultural Park</a>
       </div>
     </section>
     <div class="gw-tabs-wrap">
-      <nav class="gw-tabs" role="tablist" aria-label="长城功能">
-        <button id="tab-map" role="tab" aria-selected="true" aria-controls="panel-map" data-tab="map"><svg class="gw-icon"><use href="#gwi-map"/></svg>足迹地图</button>
-        <button id="tab-journal" role="tab" aria-selected="false" aria-controls="panel-journal" data-tab="journal" tabindex="-1"><svg class="gw-icon"><use href="#gwi-book"/></svg>墩台志</button>
-        <button id="tab-workshop" role="tab" aria-selected="false" aria-controls="panel-workshop" data-tab="workshop" tabindex="-1"><svg class="gw-icon"><use href="#gwi-palette"/></svg>AI 文创</button>
-        <button id="tab-gallery" role="tab" aria-selected="false" aria-controls="panel-gallery" data-tab="gallery" tabindex="-1"><svg class="gw-icon"><use href="#gwi-people"/></svg>共享空间</button>
-        <button id="tab-history" role="tab" aria-selected="false" aria-controls="panel-history" data-tab="history" tabindex="-1"><svg class="gw-icon"><use href="#gwi-record"/></svg>守护记录</button>
-        <button id="tab-forgotten" role="tab" aria-selected="false" aria-controls="panel-forgotten" data-tab="forgotten" tabindex="-1"><svg class="gw-icon"><use href="#gwi-pin"/></svg>被遗忘点位</button>
+      <nav class="gw-tabs" role="tablist" aria-label="Great Wall tools">
+        <button id="tab-map" role="tab" aria-selected="true" aria-controls="panel-map" data-tab="map"><svg class="gw-icon"><use href="#gwi-map"/></svg>Footprint map</button>
+        <button id="tab-journal" role="tab" aria-selected="false" aria-controls="panel-journal" data-tab="journal" tabindex="-1"><svg class="gw-icon"><use href="#gwi-book"/></svg>Site journal</button>
+        <button id="tab-workshop" role="tab" aria-selected="false" aria-controls="panel-workshop" data-tab="workshop" tabindex="-1"><svg class="gw-icon"><use href="#gwi-palette"/></svg>AI studio</button>
+        <button id="tab-gallery" role="tab" aria-selected="false" aria-controls="panel-gallery" data-tab="gallery" tabindex="-1"><svg class="gw-icon"><use href="#gwi-people"/></svg>Community</button>
+        <button id="tab-history" role="tab" aria-selected="false" aria-controls="panel-history" data-tab="history" tabindex="-1"><svg class="gw-icon"><use href="#gwi-record"/></svg>My records</button>
+        <button id="tab-forgotten" role="tab" aria-selected="false" aria-controls="panel-forgotten" data-tab="forgotten" tabindex="-1"><svg class="gw-icon"><use href="#gwi-pin"/></svg>Needs attention</button>
       </nav>
     </div>
     <div id="gw-workspace" class="gw-workspace">
       <div id="gw-global-error" class="gw-alert error" role="alert" hidden></div>
       <section id="panel-map" role="tabpanel" aria-labelledby="tab-map">
-        <div class="gw-section-head"><div><p class="gw-eyebrow">WALK &amp; REMEMBER</p><h2>记录你的长城足迹</h2><p>从一座墩台开始，留下你的观察与守护。</p></div><button class="gw-link" data-action="fit-map">查看全部点位 <svg class="gw-icon"><use href="#gwi-arrow"/></svg></button></div>
+        <div class="gw-section-head"><div><p class="gw-eyebrow">WALK &amp; REMEMBER</p><h2>Leave a footprint worth remembering</h2><p>Start with one watchtower. Record what you see and help care for it.</p></div><button class="gw-link" data-action="fit-map">Show all sites <svg class="gw-icon"><use href="#gwi-arrow"/></svg></button></div>
         <div class="gw-map-layout">
           <div class="gw-map-column">
-            <div class="gw-map-shell"><div id="gw-map" aria-label="府谷长城点位地图"></div>
-              <div class="gw-map-key"><strong>府谷长城地图</strong><span><b class="gw-marker-dot"></b>长城点位 <em id="map-count">10</em></span><span><b class="gw-marker-dot done"></b>我已记录</span></div>
-              <p class="gw-coordinate-note">点位为演示坐标，实地到访前请核准。</p>
+            <div class="gw-map-shell"><div id="gw-map" aria-label="Map of Fugu Great Wall sites"></div>
+              <div class="gw-map-key"><strong>Fugu Great Wall</strong><span><b class="gw-marker-dot"></b>Heritage sites <em id="map-count">10</em></span><span><b class="gw-marker-dot done"></b>My recorded sites</span></div>
+              <p class="gw-coordinate-note">Demo coordinates. Verify locations before visiting.</p>
               <div id="map-warning" class="gw-map-warning" role="status" hidden></div>
             </div>
-            <div class="gw-recent-head"><h3>最新记录</h3><a class="gw-link" href="#history">查看全部 <svg class="gw-icon"><use href="#gwi-arrow"/></svg></a></div>
+            <div class="gw-recent-head"><h3>Latest record</h3><a class="gw-link" href="#history">View all <svg class="gw-icon"><use href="#gwi-arrow"/></svg></a></div>
             <div id="map-recent"></div>
           </div>
           <aside id="map-site-card" class="gw-card gw-selected-card"></aside>
         </div>
         <div class="gw-feature-strip">
-          <a href="#map"><svg class="gw-icon"><use href="#gwi-map"/></svg><div><h3>记录足迹</h3><p>每一次观察，都是守护的开始。</p></div></a>
-          <a href="#journal"><svg class="gw-icon"><use href="#gwi-book"/></svg><div><h3>读懂墩台</h3><p>从地形与故事，认识黄河边墙。</p></div></a>
-          <a href="#workshop"><svg class="gw-icon"><use href="#gwi-palette"/></svg><div><h3>生成长城礼物</h3><p>让记忆进入生活，让故事继续。</p></div></a>
+          <a href="#map"><svg class="gw-icon"><use href="#gwi-map"/></svg><div><h3>Save a visit</h3><p>Every observation is a step toward preservation.</p></div></a>
+          <a href="#journal"><svg class="gw-icon"><use href="#gwi-book"/></svg><div><h3>Read the landscape</h3><p>Discover the frontier through its terrain and stories.</p></div></a>
+          <a href="#workshop"><svg class="gw-icon"><use href="#gwi-palette"/></svg><div><h3>Make a keepsake</h3><p>Bring a memory home and keep its story alive.</p></div></a>
         </div>
       </section>
       <section id="panel-journal" role="tabpanel" aria-labelledby="tab-journal" hidden>
-        <div class="gw-section-head"><div><p class="gw-eyebrow">READ THE LANDSCAPE</p><h2>读懂一座墩台</h2><p>点位、故事、现状和建议，把边墙变成可读的路线。</p></div></div>
+        <div class="gw-section-head"><div><p class="gw-eyebrow">READ THE LANDSCAPE</p><h2>Discover the story of a watchtower</h2><p>Explore the sites, their stories, and ways to care for the frontier.</p></div></div>
         <div class="gw-journal-layout">
-          <div><div id="journal-filters" class="gw-filters" aria-label="点位分类"></div><div id="journal-list" class="gw-site-list"></div></div>
+          <div><div id="journal-filters" class="gw-filters" aria-label="Site categories"></div><div id="journal-list" class="gw-site-list"></div></div>
           <article id="journal-detail" class="gw-card gw-detail"></article>
         </div>
       </section>
       <section id="panel-workshop" role="tabpanel" aria-labelledby="tab-workshop" hidden>
-        <div class="gw-section-head"><div><p class="gw-eyebrow">MAKE A LITTLE MEMORY</p><h2>把长城记忆，做成一份礼物</h2><p>选择主题或上传现场照片，创作你自己的长城文创。</p></div><span id="ai-connection" class="gw-connection">正在连接 AI 服务…</span></div>
+        <div class="gw-section-head"><div><p class="gw-eyebrow">MAKE A LITTLE MEMORY</p><h2>Turn a Great Wall memory into a gift</h2><p>Choose a site or add your photos to design a personal keepsake.</p></div><span id="ai-connection" class="gw-connection">Connecting to the AI service…</span></div>
         <div class="gw-workshop-layout">
           <form id="workshop-form" class="gw-card gw-workshop-form">
             <fieldset id="workshop-inputs">
-              <div class="gw-step"><b>1</b><label for="workshop-site">选择点位</label></div>
+              <div class="gw-step"><b>1</b><label for="workshop-site">Choose a site</label></div>
               <select id="workshop-site" name="site"></select>
-              <div class="gw-step"><b>2</b><span>文创类型</span></div>
+              <div class="gw-step"><b>2</b><span>Keepsake type</span></div>
               <div id="design-types" class="gw-design-types"></div>
-              <div class="gw-step"><b>3</b><span>照片与想法</span></div>
-              <div class="gw-photo-picker"><label for="workshop-photos" class="gw-upload"><svg class="gw-icon"><use href="#gwi-plus"/></svg><strong>上传现场照片</strong><small>照片可选 · 最多 4 张</small></label><input id="workshop-photos" type="file" accept="image/*" multiple class="gw-file-input"><div id="workshop-photo-list" class="gw-photo-list"></div></div>
-              <label class="gw-field-label" for="workshop-note">希望是什么风格？</label>
-              <textarea id="workshop-note" name="note" maxlength="180" rows="3" placeholder="例如：暖色手绘，保留黄土山梁和烽火台的轮廓"></textarea>
-              <p class="gw-input-note">照片仅在点击生成后传给 AI 服务，不会自动公开。</p>
-              <button id="generate-button" class="gw-button primary full" type="submit"><svg class="gw-icon"><use href="#gwi-spark"/></svg>生成文创图 <svg class="gw-icon"><use href="#gwi-arrow"/></svg></button>
+              <div class="gw-step"><b>3</b><span>Photos and ideas</span></div>
+              <div class="gw-photo-picker"><label for="workshop-photos" class="gw-upload"><svg class="gw-icon"><use href="#gwi-plus"/></svg><strong>Add reference photos</strong><small>Optional · Up to 4 photos</small></label><input id="workshop-photos" type="file" accept="image/*" multiple class="gw-file-input"><div id="workshop-photo-list" class="gw-photo-list"></div></div>
+              <label class="gw-field-label" for="workshop-note">What style would you like?</label>
+              <textarea id="workshop-note" name="note" maxlength="500" rows="3" placeholder="For example: warm watercolor, preserving the loess ridges and watchtower silhouette."></textarea>
+              <p class="gw-input-note">Photos are sent to the AI service only when you generate. They are not shared publicly.</p>
+              <button id="generate-button" class="gw-button primary full" type="submit"><svg class="gw-icon"><use href="#gwi-spark"/></svg>Generate a design <svg class="gw-icon"><use href="#gwi-arrow"/></svg></button>
             </fieldset>
             <div id="generation-status" class="gw-generation-status" aria-live="polite" hidden></div>
             <div id="workshop-error" class="gw-alert error" role="alert" hidden></div>
           </form>
-          <div class="gw-card gw-result-card"><div class="gw-inline-head"><h3>作品预览</h3><span class="gw-badge">为记忆而创作</span></div><div id="creation-preview"></div><div class="gw-inline-head"><h3>近期创作</h3><a href="#history" class="gw-link">查看全部 →</a></div><div id="recent-creations" class="gw-creation-strip"></div></div>
+          <div class="gw-card gw-result-card"><div class="gw-inline-head"><h3>Your design</h3><span class="gw-badge">Made to remember</span></div><div id="creation-preview"></div><div class="gw-inline-head"><h3>Recent designs</h3><a href="#history" class="gw-link">View all →</a></div><div id="recent-creations" class="gw-creation-strip"></div></div>
         </div>
       </section>
       <section id="panel-gallery" role="tabpanel" aria-labelledby="tab-gallery" hidden>
-        <div class="gw-section-head"><div><p class="gw-eyebrow">OUR SHARED WALL</p><h2>大家的长城</h2><p>主动分享的现场照片与 AI 文创，连接每一段长城记忆。</p></div><a href="#history" class="gw-button primary"><svg class="gw-icon"><use href="#gwi-share"/></svg>从我的记录分享</a></div>
-        <div class="gw-toolbar"><div id="gallery-filters" class="gw-filters"></div><button class="gw-link" data-action="refresh-gallery">刷新共享内容 ↻</button></div>
+        <div class="gw-section-head"><div><p class="gw-eyebrow">OUR SHARED WALL</p><h2>Our shared Great Wall</h2><p>Discover the photos and keepsakes that visitors have chosen to share.</p></div><a href="#history" class="gw-button primary"><svg class="gw-icon"><use href="#gwi-share"/></svg>Share from my records</a></div>
+        <div class="gw-toolbar"><div id="gallery-filters" class="gw-filters"></div><button class="gw-link" data-action="refresh-gallery">Refresh community ↻</button></div>
         <div id="gallery-status" aria-live="polite"></div><div id="gallery-grid" class="gw-gallery-grid"></div>
       </section>
       <section id="panel-history" role="tabpanel" aria-labelledby="tab-history" hidden>
-        <div class="gw-section-head"><div><p class="gw-eyebrow">MY GUARDIAN JOURNAL</p><h2>我的长城守护档案</h2><p>保存足迹、巡检、观察与文创；公开分享由你决定。</p></div><button class="gw-link" data-action="export-records"><svg class="gw-icon"><use href="#gwi-download"/></svg>导出记录</button></div>
+        <div class="gw-section-head"><div><p class="gw-eyebrow">MY GUARDIAN JOURNAL</p><h2>Your Great Wall journal</h2><p>Keep visits, patrols, observations, and designs. You choose what to share.</p></div><button class="gw-link" data-action="export-records"><svg class="gw-icon"><use href="#gwi-download"/></svg>Export records</button></div>
         <div id="history-stats" class="gw-stats"></div>
-        <div class="gw-history-layout"><div><div id="history-filters" class="gw-filters"></div><div id="history-list"></div></div><aside class="gw-card gw-history-art"><div class="gw-inline-head"><h3>我的文创</h3><a href="#workshop" class="gw-link">继续创作 →</a></div><div id="history-creations"></div><p class="gw-storage-note">照片与作品保存在当前浏览器。清理网站数据会删除本地档案，重要内容请下载保存。</p></aside></div>
+        <div class="gw-history-layout"><div><div id="history-filters" class="gw-filters"></div><div id="history-list"></div></div><aside class="gw-card gw-history-art"><div class="gw-inline-head"><h3>My designs</h3><a href="#workshop" class="gw-link">Create another →</a></div><div id="history-creations"></div><p class="gw-storage-note">Photos and designs are stored in this browser. Clearing site data removes them. Download anything you want to keep.</p></aside></div>
       </section>
       <section id="panel-forgotten" role="tabpanel" aria-labelledby="tab-forgotten" hidden>
-        <div class="gw-section-head"><div><p class="gw-eyebrow">LOOK A LITTLE CLOSER</p><h2>让需要关注的点位，重新被看见</h2><p>从资料和巡检的缺口，安排下一次观察与记录。</p></div></div>
-        <div class="gw-toolbar"><div id="forgotten-filters" class="gw-filters"></div><span class="gw-input-note">原项目参考评分 · 仅辅助观察</span></div>
-        <div class="gw-forgotten-layout"><div id="forgotten-list"></div><aside class="gw-card gw-ranking-aside"><svg class="gw-icon"><use href="#gwi-leaf"/></svg><h3>为什么需要关注？</h3><p>较少的照片、故事或巡检记录，意味着这里还有值得补充的信息。</p><div class="gw-ranking-tip"><b>补充影像</b><span>用照片记录现状</span></div><div class="gw-ranking-tip"><b>完善故事</b><span>收集当地记忆</span></div><div class="gw-ranking-tip"><b>持续巡检</b><span>观察变化，留下记录</span></div><p class="gw-input-note">基础评分来自小程序的研学参考设定，不代表实地鉴定或文物安全结论。排序随本地记录和共享资料更新。</p><p id="activity-status" class="gw-input-note"></p></aside></div>
+        <div class="gw-section-head"><div><p class="gw-eyebrow">LOOK A LITTLE CLOSER</p><h2>Give overlooked sites a closer look</h2><p>Use gaps in documentation and patrols to plan your next observation.</p></div></div>
+        <div class="gw-toolbar"><div id="forgotten-filters" class="gw-filters"></div><span class="gw-input-note">Project reference scores · For observation only</span></div>
+        <div class="gw-forgotten-layout"><div id="forgotten-list"></div><aside class="gw-card gw-ranking-aside"><svg class="gw-icon"><use href="#gwi-leaf"/></svg><h3>Why look a little closer?</h3><p>Fewer photos, stories, or patrol records can highlight useful gaps in documentation.</p><div class="gw-ranking-tip"><b>Add photos</b><span>Document the current condition</span></div><div class="gw-ranking-tip"><b>Gather stories</b><span>Listen to local memories</span></div><div class="gw-ranking-tip"><b>Keep observing</b><span>Record changes over time</span></div><p class="gw-input-note">Scores use the original educational reference settings, not a field assessment or a heritage safety finding. Rankings update with local records and shared material.</p><p id="activity-status" class="gw-input-note"></p></aside></div>
       </section>
     </div>
   </main>
-  <footer class="gw-footer"><a href="index.html">← Back to Home</a><span>墩台志 · 用观察守护，用创作讲述。</span><a href="#gw-title">回到顶部 ↑</a></footer>
+  <footer class="gw-footer"><a href="index.html">← Back to Home</a><span>Fugu Great Wall Guardian · Preserve through observation. Share through creation.</span><a href="#gw-title">Back to top ↑</a></footer>
   <div id="gw-toast" class="gw-toast" role="status" aria-live="polite" hidden></div>
-  <dialog id="gw-image-dialog" class="gw-image-dialog"><button class="gw-dialog-close" aria-label="关闭图片" data-action="close-image">×</button><img id="gw-dialog-image" alt=""><p id="gw-dialog-caption"></p></dialog>
-  <dialog id="gw-confirm-dialog" class="gw-confirm-dialog"><h3 id="gw-confirm-title"></h3><p id="gw-confirm-text"></p><div class="gw-confirm-actions"><button class="gw-button secondary" data-action="confirm-no">取消</button><button class="gw-button primary" data-action="confirm-yes">确认</button></div></dialog>
-  <noscript><p class="gw-alert error">请启用 JavaScript 使用地图、记录和 AI 文创功能。</p></noscript>
+  <dialog id="gw-image-dialog" class="gw-image-dialog"><button class="gw-dialog-close" aria-label="Close image" data-action="close-image">×</button><img id="gw-dialog-image" alt=""><p id="gw-dialog-caption"></p></dialog>
+  <dialog id="gw-confirm-dialog" class="gw-confirm-dialog"><h3 id="gw-confirm-title"></h3><p id="gw-confirm-text"></p><div class="gw-confirm-actions"><button class="gw-button secondary" data-action="confirm-no">Cancel</button><button class="gw-button primary" data-action="confirm-yes">Confirm</button></div></dialog>
+  <noscript><p class="gw-alert error">Enable JavaScript to use the map, records, and AI studio.</p></noscript>
 </body></html>

@@ -55,8 +55,8 @@ function hasPhoto(site, siteRecords, sitePublicItems) {
 }
 
 function storyCompleteness(site) {
-  const storyLength = String(site.story || '').length
-  const tipLength = String(site.protectionTip || '').length
+  const storyLength = site.referenceStoryLength ?? String(site.story || '').length
+  const tipLength = site.referenceTipLength ?? String(site.protectionTip || '').length
   let score = 1
   if (storyLength > 40) score += 1
   if (storyLength > 100) score += 1
@@ -100,23 +100,23 @@ function buildProtectionScore(site, records = [], publicItems = []) {
   const forgottenRaw = base.remoteness * 0.25 + risk * 0.22 + (maxScore - patrolFrequency) * 0.2 + (photoReady ? 0 : 1.2) + (publicCount ? 0 : 0.8) + (maxScore - accessibility) * 0.16
   const popularRaw = accessibility * 0.3 + completeness * 0.26 + education * 0.24 + patrolFrequency * 0.12 + (photoReady ? 0.5 : 0)
 
-  const priority = priorityRaw >= 3.6 ? '高' : priorityRaw >= 2.6 ? '中' : '低'
-  const priorityClass = priority === '高' ? 'high' : priority === '中' ? 'medium' : 'low'
+  const priority = priorityRaw >= 3.6 ? 'High' : priorityRaw >= 2.6 ? 'Medium' : 'Low'
+  const priorityClass = priority === 'High' ? 'high' : priority === 'Medium' ? 'medium' : 'low'
 
   const reasons = []
-  if (risk >= 4) reasons.push('风险较高')
-  if (patrolFrequency <= 1) reasons.push('近期缺少巡检')
-  if (!photoReady) reasons.push('缺少照片')
-  if (!publicCount) reasons.push('共享资料少')
-  if (base.remoteness >= 3.8) reasons.push('位置较偏')
-  if (!reasons.length) reasons.push('基础资料较完整')
+  if (risk >= 4) reasons.push('Higher reference risk')
+  if (patrolFrequency <= 1) reasons.push('No recent patrols')
+  if (!photoReady) reasons.push('Photos needed')
+  if (!publicCount) reasons.push('Few shared items')
+  if (base.remoteness >= 3.8) reasons.push('Remote location')
+  if (!reasons.length) reasons.push('Basic documentation is available')
 
   const metrics = [
-    { key: 'completeness', label: '完整度', value: completeness, desc: '保存状况、故事资料、照片和记录是否完整', tone: completeness >= 4 ? 'good' : completeness >= 2.8 ? 'medium' : 'weak' },
-    { key: 'accessibility', label: '可达性', value: accessibility, desc: '路线、入口和普通访客到达难度', tone: accessibility >= 4 ? 'good' : accessibility >= 2.8 ? 'medium' : 'weak' },
-    { key: 'risk', label: '风险程度', value: risk, desc: '破损、垃圾、侵蚀和缺少巡检带来的风险', tone: risk >= 4 ? 'risk' : risk >= 2.8 ? 'medium' : 'good' },
-    { key: 'patrolFrequency', label: '巡检频率', value: patrolFrequency, desc: '最近是否有文保员或志愿者巡检记录', tone: patrolFrequency >= 4 ? 'good' : patrolFrequency >= 2 ? 'medium' : 'weak' },
-    { key: 'education', label: '教育价值', value: education, desc: '是否适合学生理解长城体系和社区保护', tone: education >= 4 ? 'good' : education >= 2.8 ? 'medium' : 'weak' }
+    { key: 'completeness', label: 'Completeness', value: completeness, desc: 'Condition information, stories, photos, and records', tone: completeness >= 4 ? 'good' : completeness >= 2.8 ? 'medium' : 'weak' },
+    { key: 'accessibility', label: 'Accessibility', value: accessibility, desc: 'Routes, entrances, and ease of access', tone: accessibility >= 4 ? 'good' : accessibility >= 2.8 ? 'medium' : 'weak' },
+    { key: 'risk', label: 'Reference risk', value: risk, desc: 'Damage, litter, erosion, and missing patrols', tone: risk >= 4 ? 'risk' : risk >= 2.8 ? 'medium' : 'good' },
+    { key: 'patrolFrequency', label: 'Patrol frequency', value: patrolFrequency, desc: 'Recent warden or volunteer patrol records', tone: patrolFrequency >= 4 ? 'good' : patrolFrequency >= 2 ? 'medium' : 'weak' },
+    { key: 'education', label: 'Educational value', value: education, desc: 'Understanding the Great Wall network and community preservation', tone: education >= 4 ? 'good' : education >= 2.8 ? 'medium' : 'weak' }
   ].map((metric) => ({
     ...metric,
     percent: Math.round(metric.value * 20)

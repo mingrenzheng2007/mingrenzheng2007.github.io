@@ -7,7 +7,7 @@ function database() {
     const req = indexedDB.open(DB_NAME,1);
     req.onupgradeneeded = () => req.result.createObjectStore(STORE,{keyPath:'id'});
     req.onsuccess = () => resolve(req.result);
-    req.onerror = () => {dbPromise = null;reject(new Error('无法打开本地档案，请检查浏览器是否允许网站存储。'));};
+    req.onerror = () => {dbPromise = null;reject(new Error('Cannot open your local journal. Check whether site storage is allowed.'));};
   });
   return dbPromise;
 }
@@ -18,8 +18,8 @@ async function transact(mode,action) {
     const tx = db.transaction(STORE,mode);
     const req = action(tx.objectStore(STORE));
     tx.oncomplete = () => resolve(req?.result);
-    tx.onerror = () => reject(new Error('本地存储失败，可能空间不足。请先下载重要照片和作品。'));
-    tx.onabort = () => reject(new Error('本地档案未保存，请检查浏览器存储空间。'));
+    tx.onerror = () => reject(new Error('Local storage failed. Space may be full. Download important photos and designs first.'));
+    tx.onabort = () => reject(new Error('Your journal was not saved. Check available browser storage.'));
   });
 }
 
@@ -42,12 +42,12 @@ export async function removeArchive(id) {
 }
 
 export async function imageBlob(file) {
-  if (!file || !file.type.startsWith('image/')) throw new Error('请选择 JPG、PNG 或其他图片文件。');
-  if (file.size > 20 * 1024 * 1024) throw new Error('单张照片超过 20 MB，请先压缩。');
+  if (!file || !file.type.startsWith('image/')) throw new Error('Choose a JPG, PNG, or another image file.');
+  if (file.size > 20 * 1024 * 1024) throw new Error('This photo exceeds 20 MB. Compress it first.');
   const url = URL.createObjectURL(file);
   try {
     const image = new Image();
-    await new Promise((resolve,reject) => {image.onload=resolve;image.onerror=()=>reject(new Error('无法读取图片，请尝试 JPG 或 PNG。'));image.src=url;});
+    await new Promise((resolve,reject) => {image.onload=resolve;image.onerror=()=>reject(new Error('Cannot read this image. Try a JPG or PNG.'));image.src=url;});
     const ratio = Math.min(1,1600 / Math.max(image.naturalWidth,image.naturalHeight));
     const canvas = document.createElement('canvas');
     canvas.width = Math.round(image.naturalWidth * ratio);
@@ -55,6 +55,6 @@ export async function imageBlob(file) {
     const ctx = canvas.getContext('2d');
     ctx.fillStyle = '#fff';ctx.fillRect(0,0,canvas.width,canvas.height);
     ctx.drawImage(image,0,0,canvas.width,canvas.height);
-    return await new Promise((resolve,reject) => canvas.toBlob(b=>b ? resolve(b) : reject(new Error('图片转换失败。')),'image/jpeg',.88));
+    return await new Promise((resolve,reject) => canvas.toBlob(b=>b ? resolve(b) : reject(new Error('Image conversion failed.')),'image/jpeg',.88));
   } finally { URL.revokeObjectURL(url); }
 }

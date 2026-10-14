@@ -1,10 +1,10 @@
-# 墩台志 · 府谷长城守护者
+# Fugu Great Wall Guardian
 
-主页顶部导航的 `Great Wall` 链接打开独立子页面 `great-wall.html`。原 `academic.html` 保持原样，不插入作品卡片或修改文字。长城页面沿用个人网站的海军蓝、橙色、字体和全站导航；支持桌面及手机布局。
+Open `great-wall.html` from **Great Wall** in the homepage navigation. The original `academic.html` is unchanged. The project follows the portfolio's navy and orange theme and supports desktop and mobile layouts.
 
-## 本地运行与检查
+## Local preview and checks
 
-用静态 HTTP 服务打开目录，不要直接双击 HTML：
+Serve the directory over HTTP rather than opening the HTML file directly:
 
 ```powershell
 python -m http.server 5178 --bind 127.0.0.1
@@ -13,33 +13,35 @@ npm run check
 npm test
 ```
 
-没有新增 npm 运行依赖。Leaflet 1.9.4 随项目保存，许可证位于 `assets/vendor/leaflet/LICENSE`；底图使用 OpenStreetMap，并在地图内保留署名。
+No npm runtime dependencies were added. Leaflet 1.9.4 is included locally; its license is in `assets/vendor/leaflet/LICENSE`. The OpenStreetMap basemap retains its attribution. Geographic labels in third-party map tiles follow the provider's source data.
 
-## 功能与数据
+## Tools and records
 
-- 足迹地图：10 个原项目点位、浏览器定位、志愿者打卡和文保员巡检。原小程序坐标为演示坐标，页面明确标注，不能用作实地导航依据。
-- 墩台志：点位故事、守护建议和观察记录；未定位的观察标为远程观察，不计作现场到访。
-- AI 文创：原模型 `gpt-image-2`，支持 5 种文创及最多 4 张参考照片。异步任务可暂停等待、刷新后继续查询；暂停不会取消服务器任务。
-- 共享空间：读取原网关公共图库。必须主动确认才公开图片和观察文字；空图库和网络失败分别显示实际状态。
-- 守护记录：照片和生成作品保存为 IndexedDB Blob，刷新后可恢复，支持下载、导出记录和本地删除。只保留最近 60 条记录、30 张文创；清除网站数据会删除本地档案，重要图片应单独下载。
-- 被遗忘点位：复用原小程序的研学参考评分，结合本地及共享记录更新；不表示专业文物安全鉴定。
+- **Footprint map:** ten original project sites, browser location, volunteer visits, and warden patrols. Coordinates are demonstration values, clearly labelled, and are not for field navigation.
+- **Site journal:** site stories, preservation advice, and observations. Entries without an on-site location are remote observations and do not count as visits.
+- **AI studio:** the original `gpt-image-2` model, five keepsake types, and up to four reference photos. Async tasks can be resumed after refreshing. Stopping the wait does not cancel the server task.
+- **Community:** the existing gateway's public gallery. Images and notes are published only after explicit confirmation. Empty and failed states reflect the real response.
+- **My records:** images are IndexedDB Blobs, recoverable after refreshing, with downloads, JSON export, and local deletion. The archive keeps the latest 60 records and 30 designs. Clearing site data removes it; download anything important.
+- **Needs attention:** the original educational reference scoring, updated with local and shared records. Scores are not professional assessments of heritage condition or safety.
 
-巡检与足迹同步到共享统计时只发送记录编号、点位、身份、时间及位置范围等元数据，不发送照片和观察文字。故事保存在本地；照片/文创公开分享由用户单独确认。删除本地记录不会删除已同步的统计或公共图库。
+The interface, built-in site content, system messages, dates, and generation prompts are in English. Image lettering is explicitly requested in English. Legacy archive labels are normalized on read without changing record IDs, image Blobs, task IDs, or personal notes. Existing images and user-authored content are preserved. Reference text-length values keep the scoring unchanged by translation.
 
-点位故事、原始来源及参考评分来自 `E:\WeChatProjects\changcheng`。封面图片沿用原项目的公开来源，图片文件位于 `assets/great-wall/`，每个详情页保留原始来源链接。原小程序目录未修改。
+Patrol and visit sync sends activity metadata only: record ID, site, role, time, location range, and whether a photo exists. It does not upload images or observation notes. Stories stay local. Local deletion does not remove synced statistics or public gallery entries.
 
-## AI 服务
+The sites, stories, and reference scores came from `E:\WeChatProjects\changcheng`, which remains unchanged. Cover photographs are stored in `assets/great-wall/` and retain the original public-source links in each site's details.
 
-浏览器调用 `https://47.103.59.118/ai`，使用现有参考图上传、生图任务、状态查询、图库及巡检接口。上游模型密钥留在服务器，前端没有 API Key。
+## AI service and publishing
 
-已在现有 IP TLS 站点补充 `/ai/` 反向代理，允许以下浏览器来源：
+The browser calls `https://47.103.59.118/ai` for reference uploads, generation tasks, status checks, gallery entries, and activity metadata. Upstream credentials remain on the server; there is no API key in the frontend.
+
+The existing IP TLS site proxies `/ai/` and permits these browser origins:
 
 - `https://mingrenzheng2007.github.io`
 - `http://127.0.0.1:5178`
 - `http://localhost:5178`
 
-HTTPS 生图提交按 IP 限流为每分钟 1 次，并允许 1 次突发。限流用于减少误连击，不是用户身份认证。其他访问端点沿用原网关。
+HTTPS image submission is limited per IP to one request a minute, with one burst request. This reduces repeat submissions; it is not user authentication. Other endpoints retain the gateway's existing behavior.
 
-本地配置与部署脚本位于 `E:\WeChatProjects\shared-ai-gateway\deploy\allen-ai-*` / `install-allen-ai.py`。服务器原配置备份：`/opt/shared-ai-gateway/.deploy-backups/allen-https-20261003-012234`。本次只新增 Nginx HTTPS 接入，没有修改服务器 `.env` 或模型服务源代码。
+Local Nginx configuration and the deployment script are under `E:\WeChatProjects\shared-ai-gateway\deploy\allen-ai-*` and `install-allen-ai.py`. The original server configuration backup is `/opt/shared-ai-gateway/.deploy-backups/allen-https-20261003-012234`. The HTTPS integration did not change the server `.env` or model-service source.
 
-发布地址：`https://mingrenzheng2007.github.io/great-wall.html`。推送至主页仓库后由 GitHub Pages 发布。`tmp/` 中的生成效果图、实际页面截图、测试浏览器数据和 AI 验证作品不进入源码提交。
+Published page: `https://mingrenzheng2007.github.io/great-wall.html`. GitHub Pages publishes the homepage repository. Mockups, screenshots, test browser data, and AI verification images in `tmp/` are excluded from source commits.
