@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ALLEN ZHENG | OPTIMIZING TRANSPORT SAFETY DECISIONS</title>
+    <meta name="description" content="An accepted SCI Q1 study combining FANMA, MARCOS, and PSO-enhanced K-means to evaluate transport safety across 35 OAS countries.">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="pso-transport-safety.css">
+    <script src="pso-transport-safety.js" defer></script>
+  </head>
+  <body class="pso-page">
+    <header class="site-header solid">
+      <a class="brand" href="index.html">ALLEN ZHENG</a>
+      <nav class="site-nav" aria-label="Primary navigation">
+        <a href="index.html">HOME</a>
+        <a class="active" href="academic.html">Academic &amp; Research</a>
+        <a href="wharton-data-science.html">Wharton Data Science</a>
+        <a href="athletic.html">Athletic</a>
+        <a href="game.html">Game</a>
+        <a href="art.html">Art</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="pso-hero" aria-labelledby="pso-title">
+        <img class="pso-cover" src="assets/research/backgrounds/pso-transport-safety-hero.webp" alt="Illustrative city at blue hour, with connected boulevards, pedestrian crossings, and tree-lined neighborhoods">
+        <img class="pso-motion" src="assets/research/pso-transport-safety/city-motion.svg" alt="" aria-hidden="true">
+        <div class="pso-inner pso-hero-copy">
+          <p class="pso-label">Collaborative research &middot; SCI Q1 &middot; Accepted for publication</p>
+          <h1 id="pso-title">Optimizing Transport Safety Decisions</h1>
+          <p>How FANMA, MARCOS, and particle swarm optimization connect country rankings, safety profiles, and evidence for better transport planning.</p>
+        </div>
+      </section>
+
+      <section class="pso-section" aria-labelledby="pso-study-title">
+        <div class="pso-inner">
+          <a class="pso-back" href="academic.html#pso-transport-safety-research">&larr; Back to Academic &amp; Research</a>
+          <header class="pso-heading">
+            <p class="pso-label">Study at a glance</p>
+            <h2 id="pso-study-title">Reliable decisions begin with a fuller view of safety.</h2>
+            <p>A single ranking cannot show every strength or weakness in a transport system. This study combines objective weighting, composite rankings, and clustering to compare countries and support targeted safety strategies.</p>
+          </header>
+          <div class="pso-stats" aria-label="Study scope">
+            <div><strong>35</strong><span>OAS countries</span></div>
+            <div><strong>15</strong><span>safety indicators</span></div>
+            <div><strong>2</strong><span>benchmark years: 2010 &amp; 2020</span></div>
+            <div><strong>4</strong><span>reported country groups</span></div>
+          </div>
+          <p class="pso-contribution"><strong>My contribution:</strong> Investigation, validation, and writing the original draft, as credited in the manuscript.</p>
+          <p class="pso-source">The animated cover is a conceptual city scene. Its moving vehicles and four particle centers illustrate transport networks and centroid search; they are not measured traffic or country locations.</p>
+        </div>
+      </section>
+
+      <section class="pso-section pso-tinted" aria-labelledby="pso-ranking-title">
+        <div class="pso-inner">
+          <div class="pso-section-top">
+            <header class="pso-heading">
+              <p class="pso-label">Results &middot; MARCOS ranking</p>
+              <h2 id="pso-ranking-title">Compare safety performance across a decade.</h2>
+              <p>Canada ranks first in both benchmark years. Brazil, Uruguay, and Ecuador move up substantially. Switch years to explore the reported scores and rankings.</p>
+            </header>
+            <div class="pso-years" role="group" aria-label="Select ranking year">
+              <button type="button" data-pso-year="2010" aria-pressed="false">2010</button>
+              <button type="button" data-pso-year="2020" aria-pressed="true">2020</button>
+            </div>
+          </div>
+          <figure class="pso-ranking" aria-labelledby="pso-rank-caption">
+            <ol class="pso-rank-list" id="pso-rank-list"></ol>
+            <figcaption class="pso-source" id="pso-rank-caption">Top <span id="pso-visible-count">10</span> of 35 countries in <span data-pso-selected-year>2020</span>. Scores and ranks are transcribed from manuscript Table 1. Higher scores indicate stronger composite performance, not a probability of avoiding a crash.</figcaption>
+          </figure>
+          <button class="pso-expand" type="button" id="pso-expand" aria-expanded="false" aria-controls="pso-rank-list">Show all 35 countries</button>
+          <noscript><p>The interactive country results require JavaScript. All results are also available in Table 1 of the <a href="assets/research/pso-transport-safety/full-manuscript.pdf">full manuscript</a>.</p></noscript>
+          <div class="pso-changes" aria-label="Notable changes between 2010 and 2020">
+            <article><h3>Brazil</h3><strong>11th &rarr; 2nd</strong><p>Its reported composite score rises from 0.7616 to 0.9215.</p></article>
+            <article><h3>Uruguay</h3><strong>29th &rarr; 5th</strong><p>A 24-place rise, from a score of 0.5522 to 0.8961.</p></article>
+            <article><h3>Ecuador</h3><strong>33rd &rarr; 17th</strong><p>Its reported score increases from 0.4180 to 0.7594.</p></article>
+          </div>
+        </div>
+      </section>
+
+      <section class="pso-section" aria-labelledby="pso-model-title">
+        <div class="pso-inner">
+          <header class="pso-heading">
+            <p class="pso-label">Model architecture</p>
+            <h2 id="pso-model-title">From mixed indicators to rankings and groups.</h2>
+            <p>The FANMA&ndash;MARCOS&ndash;K-means framework integrates three different tasks: deciding how much each indicator matters, scoring alternatives, and finding comparable profiles.</p>
+          </header>
+          <ol class="pso-flow">
+            <li><h3>Build the matrix</h3><p>Assemble the 35-country, 15-indicator dataset for each benchmark year.</p></li>
+            <li><h3>Normalize</h3><p>Use min-max normalization to compare indicators measured in different units.</p></li>
+            <li><h3>FANMA</h3><p>Derive objective indicator weights through a distance-to-ideal optimization model.</p></li>
+            <li><h3>MARCOS</h3><p>Compare alternatives with ideal and anti-ideal solutions to calculate utility scores and ranks.</p></li>
+            <li><h3>PSO + K-means</h3><p>Search for initial centroids with particle swarm optimization, then refine the country groups with K-means.</p></li>
+          </ol>
+          <p class="pso-method-note"><strong>What PSO changes:</strong> Each particle represents a candidate set of cluster centers. It moves according to its own best position and the swarm&rsquo;s best position, seeking a lower within-cluster sum of squares. These centers initialize K-means. The case study uses four groups; the search for centroids does not by itself select the number of groups.</p>
+          <p class="pso-source">Source: manuscript Section 3.4, Steps 1&ndash;5 and Equations 19&ndash;25.</p>
+        </div>
+      </section>
+
+      <section class="pso-section pso-dark" aria-labelledby="pso-groups-title">
+        <div class="pso-inner">
+          <header class="pso-heading">
+            <p class="pso-label">Results &middot; Country profiles</p>
+            <h2 id="pso-groups-title">Look beyond a country&rsquo;s position in the ranking.</h2>
+            <p>Clustering compares multivariate safety profiles. The reported group membership can differ from the order of the composite ranking, so both views help describe the same transport system.</p>
+          </header>
+          <div class="pso-groups" id="pso-groups"></div>
+          <p class="pso-source">Membership for <strong data-pso-selected-year>2020</strong>, transcribed from manuscript Table 11. Group numbers follow the manuscript. The year controls update both the ranking and the groups.</p>
+        </div>
+      </section>
+
+      <section class="pso-section" aria-labelledby="pso-quality-title">
+        <div class="pso-inner">
+          <div class="pso-section-top">
+            <header class="pso-heading">
+              <p class="pso-label">Results &middot; Model checks</p>
+              <h2 id="pso-quality-title">Compare clustering quality across methods.</h2>
+              <p>The study evaluates separation and compactness using three clustering metrics. These are the values reported for each method.</p>
+            </header>
+            <div class="pso-years" role="group" aria-label="Select clustering comparison year">
+              <button type="button" data-pso-year="2010" aria-pressed="false">2010</button>
+              <button type="button" data-pso-year="2020" aria-pressed="true">2020</button>
+            </div>
+          </div>
+          <div class="pso-table-scroll" tabindex="0" role="region" aria-label="Clustering quality comparison table">
+            <table class="pso-table">
+              <caption>Clustering quality in <span data-pso-selected-year>2020</span> &middot; Table 12</caption>
+              <thead><tr><th scope="col">Method</th><th scope="col">Silhouette<small>Higher is better</small></th><th scope="col">Davies&ndash;Bouldin<small>Lower is better</small></th><th scope="col">Calinski&ndash;Harabasz<small>Higher is better</small></th></tr></thead>
+              <tbody id="pso-quality-rows"></tbody>
+            </table>
+          </div>
+          <p class="pso-quality-reading" id="pso-quality-reading" aria-live="polite"></p>
+          <div class="pso-robustness">
+            <div><strong>0.95&ndash;0.97</strong><h3>Weighting agreement</h3><p>Weighted rank correlations of FANMA with CRITIC and Entropy across the two years. <em>Table 6.</em></p></div>
+            <div><strong>0.95&ndash;0.99</strong><h3>Aggregation agreement</h3><p>Weighted rank correlations of MARCOS with TOPSIS and VIKOR. <em>Table 8.</em></p></div>
+            <div><strong>0.61</strong><h3>Comparison with HDI</h3><p>Weighted rank correlation in both years: a moderate association with a broader development index. <em>Table 10.</em></p></div>
+          </div>
+          <p class="pso-source">Normalization has more influence: MinMax comparisons with Vector and Z-Score range from 0.72 to 0.81 (Table 4). The reported results support a sensitivity-aware reading rather than an assumption that every modeling choice produces identical ranks.</p>
+        </div>
+      </section>
+
+      <section class="pso-section pso-tinted" aria-labelledby="pso-indicators-title">
+        <div class="pso-inner">
+          <header class="pso-heading">
+            <p class="pso-label">What the model measures</p>
+            <h2 id="pso-indicators-title">Fifteen indicators connect outcomes to their context.</h2>
+            <p>The framework includes road infrastructure, user behavior, socioeconomic conditions, and enforcement alongside fatality outcomes.</p>
+          </header>
+          <dl class="pso-indicators">
+            <div style="--indicator-color:#c96c59"><dt>Safety outcomes</dt><dd><b>A1</b> Fatalities per 100,000 people<br><b>A2</b> Fatalities per 10,000 registered vehicles<br><b>A3</b> Pedestrian share of fatalities</dd></div>
+            <div style="--indicator-color:#c69137"><dt>Road-user behavior</dt><dd><b>B1</b> Alcohol-related traffic deaths<br><b>B2</b> Front-seat belt use<br><b>B3</b> Rear-seat belt use<br><b>B4</b> Helmet use</dd></div>
+            <div style="--indicator-color:#338ba0"><dt>Infrastructure</dt><dd><b>C1</b> Share of paved roads<br><b>C2</b> Road network density</dd></div>
+            <div style="--indicator-color:#60987c"><dt>Socioeconomic context</dt><dd><b>D1</b> Urban population share<br><b>D2</b> GDP per capita</dd></div>
+            <div style="--indicator-color:#8d80ab"><dt>Enforcement</dt><dd><b>E1</b> Speed-limit law<br><b>E2</b> Drink-driving law<br><b>E3</b> Seatbelt law<br><b>E4</b> Helmet-use law</dd></div>
+          </dl>
+          <p class="pso-source">Source: manuscript Figure 1 and Sections 4.1 and 5.1. Enforcement indicators are reported enforcement scores.</p>
+        </div>
+      </section>
+
+      <section class="pso-section" aria-labelledby="pso-planning-title">
+        <div class="pso-inner">
+          <header class="pso-heading">
+            <p class="pso-label">From analysis to planning</p>
+            <h2 id="pso-planning-title">Use the score to ask where action is needed.</h2>
+            <p>The paper deconstructs composite scores and their changes into indicator contributions. This links a broad country comparison to more specific questions about infrastructure, behavior, and enforcement.</p>
+          </header>
+          <div class="pso-figures">
+            <figure><a href="assets/research/pso-transport-safety/score-contributions.png" target="_blank" rel="noopener"><img src="assets/research/pso-transport-safety/score-contributions.png" loading="lazy" width="1291" height="606" alt="Manuscript Figure 7, stacked bars showing each indicator's contribution to countries' composite scores"></a><figcaption>Figure 7 &middot; Contributions to composite scores. Original figure reproduced from the supplied manuscript; click to enlarge.</figcaption></figure>
+            <figure><a href="assets/research/pso-transport-safety/score-changes.png" target="_blank" rel="noopener"><img src="assets/research/pso-transport-safety/score-changes.png" loading="lazy" width="1304" height="603" alt="Manuscript Figure 8, positive and negative indicator contributions to changes in country scores"></a><figcaption>Figure 8 &middot; Decomposition of score changes between 2010 and 2020. Original manuscript figure; click to enlarge.</figcaption></figure>
+          </div>
+          <div class="pso-planning">
+            <article><h3>Locate the intervention</h3><p>Consider road infrastructure and pedestrian outcomes alongside compliance and enforcement. A composite rank alone cannot identify which part of the system needs attention.</p></article>
+            <article><h3>Learn from comparable profiles</h3><p>Use groups to organize peer learning, then inspect individual indicators. The paper discusses seatbelt use, speed enforcement, and alcohol-related fatalities as examples of different national strengths.</p></article>
+            <article><h3>Connect scales carefully</h3><p>Country-level benchmarking provides context for transport planning. A city intervention still needs local crash, street-design, and road-user evidence before implementation.</p></article>
+          </div>
+          <p class="pso-source">Score deconstruction and peer benchmarking: manuscript Sections 5.2&ndash;5.4. The connection to local planning is an interpretation of the framework, not a city-level impact estimate.</p>
+        </div>
+      </section>
+
+      <section class="pso-section pso-tinted" aria-labelledby="pso-limits-title">
+        <div class="pso-inner pso-limitations">
+          <header class="pso-heading">
+            <p class="pso-label">Scope and next steps</p>
+            <h2 id="pso-limits-title">A decision aid grounded in the available evidence.</h2>
+            <p>The study depends on secondary data for two benchmark years; missing values are filled with adjacent-year information or interpolation. Data availability, normalization choices, and the fixed four-group configuration limit what can be concluded.</p>
+          </header>
+          <p class="pso-body">The authors propose updated indicators for emerging transport systems, further algorithmic development, and validation beyond the OAS region. The analysis compares observed profiles; it does not estimate the causal effect of a particular transport policy.</p>
+          <p class="pso-source">Source: Sections 4.1.2&ndash;4.1.3 and 6.2, with the model scope made explicit.</p>
+        </div>
+      </section>
+
+      <section class="pso-section pso-paper" aria-labelledby="pso-paper-title">
+        <div class="pso-inner">
+          <p class="pso-label">SCI Q1 &middot; Accepted &middot; Publication forthcoming</p>
+          <h2 id="pso-paper-title">Explore the full paper.</h2>
+          <p class="pso-paper-title">Enhancing decision reliability through a PSO-optimized hybrid multi-criteria decision-making framework</p>
+          <p class="pso-body">Shijie Sun, Xinyue Zhang, Jialin Li, Kejun Lu, Anna Qian, Zhanheng Sun, Mingren Zheng, and Faan Chen.</p>
+          <p class="pso-body">Read the complete methodology, equations, 35-country result tables, robustness comparisons, and policy discussion in the supplied manuscript.</p>
+          <a class="pso-paper-link" href="assets/research/pso-transport-safety/full-manuscript.pdf" target="_blank" rel="noopener">Explore the full paper &nearr;</a>
+          <p class="pso-source">Full manuscript &middot; PDF. Accepted for publication; the final journal version is forthcoming.</p>
+        </div>
+      </section>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>

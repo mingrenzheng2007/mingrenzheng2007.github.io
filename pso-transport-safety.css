@@ -1,0 +1,166 @@
+.paper-card-pso { isolation: isolate; }
+.paper-card-pso > .pso-cover { position: absolute; inset: 0; object-position: center; }
+.paper-card-pso > .pso-motion,
+.pso-hero > .pso-motion {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none;
+}
+.paper-card-pso .paper-copy { z-index: 2; }
+.paper-card.paper-card-pso:hover > img,
+.paper-card.paper-card-pso:focus-within > img { transform: none; }
+.pso-page { color: #173039; background: #fbf7ed; }
+.pso-inner { width: min(calc(100% - 64px), 1180px); margin: 0 auto; }
+.pso-hero {
+  position: relative;
+  min-height: 700px;
+  height: min(86vh, 900px);
+  overflow: hidden;
+  color: #fff;
+  background: #071b2a;
+}
+.pso-hero > .pso-cover { position: absolute; width: 100%; height: 100%; object-fit: cover; }
+.pso-hero::after {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  content: "";
+  background: linear-gradient(180deg, transparent 25%, #03121d50 50%, #03121dee 100%);
+}
+.pso-hero-copy { position: absolute; left: 50%; bottom: 72px; z-index: 3; transform: translateX(-50%); }
+.pso-label { margin: 0 0 14px; color: #b76e18; font-size: 13px; font-weight: 900; letter-spacing: .06em; text-transform: uppercase; }
+.pso-hero .pso-label,
+.pso-dark .pso-label { color: #ffc46a; }
+.pso-hero h1 { max-width: 1000px; margin: 0 0 22px; font-size: clamp(44px, 5.6vw, 76px); line-height: 1.02; }
+.pso-hero-copy > p:last-child { max-width: 820px; margin: 0; font-size: clamp(18px, 1.7vw, 23px); line-height: 1.55; }
+.pso-section { padding: 88px 0; }
+.pso-tinted { background: #e9f0ef; }
+.pso-dark { color: #fff; background: #0b2633; }
+.pso-heading { max-width: 800px; margin-bottom: 38px; }
+.pso-heading h2,
+.pso-paper h2 { margin: 0; font-size: clamp(32px, 3.8vw, 49px); line-height: 1.12; }
+.pso-heading > p:last-child,
+.pso-body { margin: 20px 0 0; font-size: 18px; line-height: 1.7; }
+.pso-source { margin: 20px 0 0; color: #51656b; font-size: 13px; line-height: 1.65; }
+.pso-dark .pso-source { color: #b5cbd2; }
+.pso-back { display: inline-block; margin-bottom: 30px; color: #385861; font-size: 14px; font-weight: 800; }
+.pso-stats { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 18px; margin: 36px 0; }
+.pso-stats > div { padding: 22px 0 18px; border-top: 3px solid #dcaa58; }
+.pso-stats > div:nth-child(2) { border-color: #2d97ab; }
+.pso-stats > div:nth-child(3) { border-color: #5aa784; }
+.pso-stats > div:nth-child(4) { border-color: #d87960; }
+.pso-stats strong { display: block; margin-bottom: 12px; font-size: 52px; line-height: 1; }
+.pso-stats span { font-size: 15px; font-weight: 800; }
+.pso-contribution { max-width: 900px; margin: 0; color: #385861; font-size: 16px; line-height: 1.7; }
+.pso-section-top { display: flex; align-items: flex-end; justify-content: space-between; gap: 32px; margin-bottom: 38px; }
+.pso-section-top .pso-heading { margin: 0; max-width: 760px; }
+.pso-years { display: flex; gap: 6px; flex-shrink: 0; padding: 5px; border: 1px solid #9eb5b7; border-radius: 5px; }
+.pso-years button,
+.pso-expand { padding: 11px 18px; border: 0; border-radius: 3px; font: inherit; font-size: 14px; font-weight: 800; cursor: pointer; }
+.pso-years button { color: #173039; background: transparent; }
+.pso-years button[aria-pressed="true"] { color: #fff; background: #153d4d; }
+.pso-years button:focus-visible,
+.pso-expand:focus-visible { outline: 3px solid #d29437; outline-offset: 3px; }
+.pso-ranking { margin: 0; }
+.pso-rank-list { display: grid; gap: 10px; margin: 0; padding: 0; list-style: none; }
+.pso-rank-list li { display: grid; grid-template-columns: 32px minmax(170px, 1.1fr) minmax(80px, 2fr) 66px; align-items: center; gap: 18px; min-height: 56px; }
+.pso-rank-list b { color: #667c83; font-size: 15px; }
+.pso-country strong { display: block; font-size: 15px; }
+.pso-country small { display: block; margin-top: 5px; color: #60777d; font-size: 12px; }
+.pso-bar { height: 16px; overflow: hidden; border-radius: 2px; background: #d4e0de; }
+.pso-bar > span { display: block; width: var(--pso-score); height: 100%; background: #257c8e; transition: width 450ms ease; }
+.pso-rank-list li:first-child .pso-bar > span { background: #be822c; }
+.pso-rank-list output { text-align: right; font-size: 15px; font-variant-numeric: tabular-nums; }
+.pso-expand { display: block; margin-top: 24px; color: #fff; background: #153d4d; }
+.pso-changes { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 30px; margin-top: 48px; padding-top: 28px; border-top: 1px solid #b4c7c8; }
+.pso-changes h3 { margin: 0 0 10px; font-size: 19px; }
+.pso-changes strong { color: #236c7e; font-size: 27px; }
+.pso-changes p { margin: 12px 0 0; font-size: 15px; line-height: 1.65; }
+.pso-flow { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 24px; margin: 0; padding: 0; list-style: none; counter-reset: step; }
+.pso-flow li { padding-top: 20px; border-top: 2px solid #aec2c7; counter-increment: step; }
+.pso-flow li::before { content: "0" counter(step); color: #b47b29; font-size: 14px; font-weight: 900; }
+.pso-flow h3 { min-height: 46px; margin: 16px 0 12px; font-size: 20px; }
+.pso-flow p { margin: 0; font-size: 15px; line-height: 1.7; }
+.pso-method-note { max-width: 900px; margin: 35px 0 0; padding-top: 25px; border-top: 1px solid #cad3cf; font-size: 16px; line-height: 1.75; }
+.pso-groups { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 24px; }
+.pso-group { min-width: 0; padding-top: 22px; border-top: 3px solid var(--group-color); }
+.pso-group p { margin: 0 0 14px; color: var(--group-color); font-size: 13px; font-weight: 900; text-transform: uppercase; }
+.pso-group h3 { margin: 0 0 18px; font-size: 28px; }
+.pso-group ul { display: flex; flex-wrap: wrap; gap: 7px; margin: 0; padding: 0; list-style: none; }
+.pso-group li { padding: 6px 8px; color: #d5e4e8; border: 1px solid #52717e; border-radius: 3px; font-size: 12px; }
+.pso-table-scroll { overflow-x: auto; }
+.pso-table { width: 100%; border-collapse: collapse; text-align: left; font-size: 16px; }
+.pso-table caption { padding: 0 0 18px; text-align: left; font-weight: 800; }
+.pso-table th { padding: 18px; border-bottom: 2px solid #91aeb5; }
+.pso-table td { padding: 20px 18px; border-bottom: 1px solid #ccd8d6; font-variant-numeric: tabular-nums; }
+.pso-table tbody tr:first-child { background: #edf2ed; }
+.pso-table th small { display: block; margin-top: 8px; color: #637b81; font-size: 12px; font-weight: 400; }
+.pso-quality-reading { max-width: 920px; margin: 25px 0 0; font-size: 17px; line-height: 1.7; }
+.pso-robustness { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 28px; margin-top: 50px; }
+.pso-robustness > div { padding-top: 22px; border-top: 2px solid #a3bfc1; }
+.pso-robustness strong { display: block; color: #24697b; font-size: 36px; }
+.pso-robustness h3 { margin: 12px 0; font-size: 18px; }
+.pso-robustness p { margin: 0; font-size: 15px; line-height: 1.65; }
+.pso-indicators { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 25px; margin: 0; }
+.pso-indicators > div { padding-top: 20px; border-top: 3px solid var(--indicator-color); }
+.pso-indicators dt { margin-bottom: 17px; font-size: 18px; font-weight: 900; }
+.pso-indicators dd { margin: 0; color: #395860; font-size: 14px; line-height: 1.8; }
+.pso-indicators b { color: #21434e; }
+.pso-figures { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; margin-top: 38px; }
+.pso-figures figure { min-width: 0; margin: 0; }
+.pso-figures img { display: block; width: 100%; height: auto; padding: 14px; background: #fff; }
+.pso-figures figcaption { margin-top: 14px; color: #51656b; font-size: 13px; line-height: 1.65; }
+.pso-planning { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 30px; margin-top: 42px; }
+.pso-planning article { padding-top: 22px; border-top: 2px solid #a3bfc1; }
+.pso-planning h3 { margin: 0 0 14px; font-size: 21px; }
+.pso-planning p { margin: 0; font-size: 16px; line-height: 1.75; }
+.pso-limitations { max-width: 900px; }
+.pso-paper { background: #0b2633; color: #fff; }
+.pso-paper .pso-label { color: #ffc46a; }
+.pso-paper h2 { max-width: 930px; }
+.pso-paper-title { max-width: 950px; margin: 28px 0 18px; color: #d3e3e7; font-size: 20px; line-height: 1.6; }
+.pso-paper .pso-body { max-width: 820px; color: #c7dce2; font-size: 16px; }
+.pso-paper-link { display: inline-block; margin-top: 30px; padding: 17px 25px; color: #102d3a; border: 2px solid #ffc46a; border-radius: 4px; background: #ffc46a; font-size: 17px; font-weight: 900; }
+.pso-paper-link:hover,
+.pso-paper-link:focus-visible { color: #fff; background: transparent; }
+.pso-paper .pso-source { color: #a6c2cb; }
+@media (max-width: 980px) {
+  .pso-flow { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .pso-indicators { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .pso-groups { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .pso-section-top { align-items: flex-start; flex-direction: column; }
+  .pso-hero-copy { bottom: 54px; }
+}
+@media (max-width: 640px) {
+  .pso-inner { width: calc(100% - 36px); }
+  .pso-section { padding: 58px 0; }
+  .pso-hero { min-height: 640px; height: 82svh; }
+  .pso-hero h1 { font-size: 43px; }
+  .pso-hero-copy { bottom: 44px; }
+  .pso-hero-copy > p:last-child { font-size: 18px; }
+  .pso-stats { grid-template-columns: 1fr 1fr; }
+  .pso-stats strong { font-size: 45px; }
+  .pso-flow,
+  .pso-indicators { grid-template-columns: 1fr 1fr; gap: 28px 20px; }
+  .pso-flow h3 { min-height: 0; }
+  .pso-changes,
+  .pso-planning,
+  .pso-robustness,
+  .pso-figures { grid-template-columns: 1fr; }
+  .pso-rank-list li { grid-template-columns: 22px minmax(104px, 1.2fr) minmax(35px, 1fr) 54px; gap: 9px; min-height: 62px; }
+  .pso-country strong { font-size: 13px; }
+  .pso-rank-list output { font-size: 13px; }
+  .pso-bar { height: 13px; }
+  .pso-table { min-width: 570px; font-size: 14px; }
+  .pso-table td,
+  .pso-table th { padding: 16px 12px; }
+  .pso-heading > p:last-child,
+  .pso-body { font-size: 17px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .pso-bar > span { transition: none; }
+}

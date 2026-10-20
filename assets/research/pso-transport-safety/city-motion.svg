@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1672 941" width="1672" height="941">
+  <style>
+    .route { fill: none; stroke-width: 1.2; opacity: .24; }
+    .vehicle { stroke: #132839; stroke-width: 1; }
+    .particle { filter: url(#glow); }
+    @media (prefers-reduced-motion: reduce) { .moving { display: none; } }
+  </style>
+  <defs>
+    <filter id="glow" x="-150%" y="-150%" width="400%" height="400%">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <path id="avenue" d="M -70 815 C 270 710 540 600 800 505 S 1190 335 1420 172"/>
+    <path id="avenue-back" d="M 1425 185 C 1190 355 1040 435 805 525 S 280 735 -70 840"/>
+    <path id="cross" d="M 150 352 C 380 400 590 455 810 515 S 1310 625 1750 705"/>
+    <path id="cross-back" d="M 1750 720 C 1320 640 1040 575 810 530 S 380 420 150 366"/>
+    <path id="cyan-a" d="M 150 185 C 295 155 255 360 455 310"/>
+    <path id="cyan-b" d="M 345 480 C 300 365 515 410 455 310"/>
+    <path id="amber-a" d="M 650 155 C 710 305 980 165 965 315"/>
+    <path id="amber-b" d="M 790 465 C 960 455 830 280 965 315"/>
+    <path id="green-a" d="M 310 610 C 455 500 485 705 630 605"/>
+    <path id="green-b" d="M 850 710 C 810 595 675 740 630 605"/>
+    <path id="coral-a" d="M 1090 165 C 1110 350 1445 245 1325 440"/>
+    <path id="coral-b" d="M 1530 635 C 1400 645 1495 445 1325 440"/>
+  </defs>
+  <g stroke="#66d7e4">
+    <use class="route" xlink:href="#cyan-a"/><use class="route" xlink:href="#cyan-b"/>
+  </g>
+  <g stroke="#ffc56a">
+    <use class="route" xlink:href="#amber-a"/><use class="route" xlink:href="#amber-b"/>
+  </g>
+  <g stroke="#6cdeb1">
+    <use class="route" xlink:href="#green-a"/><use class="route" xlink:href="#green-b"/>
+  </g>
+  <g stroke="#ff947c">
+    <use class="route" xlink:href="#coral-a"/><use class="route" xlink:href="#coral-b"/>
+  </g>
+  <g class="moving">
+    <g class="vehicle" fill="#fff9da"><rect x="-11" y="-4" width="22" height="8" rx="3"/><animateMotion dur="14s" begin="-2s" repeatCount="indefinite" rotate="auto"><mpath xlink:href="#avenue"/></animateMotion></g>
+    <g class="vehicle" fill="#e9f5fa"><rect x="-11" y="-4" width="22" height="8" rx="3"/><animateMotion dur="14s" begin="-7s" repeatCount="indefinite" rotate="auto"><mpath xlink:href="#avenue"/></animateMotion></g>
+    <g class="vehicle" fill="#ffb84d"><rect x="-16" y="-4.5" width="32" height="9" rx="3"/><animateMotion dur="18s" begin="-11s" repeatCount="indefinite" rotate="auto"><mpath xlink:href="#avenue"/></animateMotion></g>
+    <g class="vehicle" fill="#ed816c"><rect x="-11" y="-4" width="22" height="8" rx="3"/><animateMotion dur="15s" begin="-5s" repeatCount="indefinite" rotate="auto"><mpath xlink:href="#avenue-back"/></animateMotion></g>
+    <g class="vehicle" fill="#fff9da"><rect x="-11" y="-4" width="22" height="8" rx="3"/><animateMotion dur="15s" begin="-12s" repeatCount="indefinite" rotate="auto"><mpath xlink:href="#avenue-back"/></animateMotion></g>
+    <g class="vehicle" fill="#e9f5fa"><rect x="-11" y="-4" width="22" height="8" rx="3"/><animateMotion dur="17s" begin="-3s" repeatCount="indefinite" rotate="auto"><mpath xlink:href="#cross"/></animateMotion></g>
+    <g class="vehicle" fill="#ffb84d"><rect x="-11" y="-4" width="22" height="8" rx="3"/><animateMotion dur="17s" begin="-12s" repeatCount="indefinite" rotate="auto"><mpath xlink:href="#cross"/></animateMotion></g>
+    <g class="vehicle" fill="#ed816c"><rect x="-11" y="-4" width="22" height="8" rx="3"/><animateMotion dur="16s" begin="-8s" repeatCount="indefinite" rotate="auto"><mpath xlink:href="#cross-back"/></animateMotion></g>
+    <g fill="#66d7e4" class="particle">
+      <circle r="5"><animateMotion dur="6.5s" begin="-1s" repeatCount="indefinite"><mpath xlink:href="#cyan-a"/></animateMotion></circle>
+      <circle r="4"><animateMotion dur="6.5s" begin="-4s" repeatCount="indefinite"><mpath xlink:href="#cyan-b"/></animateMotion></circle>
+    </g>
+    <g fill="#ffc56a" class="particle">
+      <circle r="5"><animateMotion dur="7.2s" begin="-2s" repeatCount="indefinite"><mpath xlink:href="#amber-a"/></animateMotion></circle>
+      <circle r="4"><animateMotion dur="7.2s" begin="-5s" repeatCount="indefinite"><mpath xlink:href="#amber-b"/></animateMotion></circle>
+    </g>
+    <g fill="#6cdeb1" class="particle">
+      <circle r="5"><animateMotion dur="6.8s" begin="-3s" repeatCount="indefinite"><mpath xlink:href="#green-a"/></animateMotion></circle>
+      <circle r="4"><animateMotion dur="6.8s" begin="-6s" repeatCount="indefinite"><mpath xlink:href="#green-b"/></animateMotion></circle>
+    </g>
+    <g fill="#ff947c" class="particle">
+      <circle r="5"><animateMotion dur="7.6s" begin="-1s" repeatCount="indefinite"><mpath xlink:href="#coral-a"/></animateMotion></circle>
+      <circle r="4"><animateMotion dur="7.6s" begin="-5s" repeatCount="indefinite"><mpath xlink:href="#coral-b"/></animateMotion></circle>
+    </g>
+    <g fill="none" stroke-width="1.5">
+      <circle cx="455" cy="310" r="18" stroke="#66d7e4"><animate attributeName="r" values="15;40" dur="4s" repeatCount="indefinite"/><animate attributeName="opacity" values=".85;0" dur="4s" repeatCount="indefinite"/></circle>
+      <circle cx="965" cy="315" r="18" stroke="#ffc56a"><animate attributeName="r" values="15;40" dur="4s" begin="-1s" repeatCount="indefinite"/><animate attributeName="opacity" values=".85;0" dur="4s" begin="-1s" repeatCount="indefinite"/></circle>
+      <circle cx="630" cy="605" r="18" stroke="#6cdeb1"><animate attributeName="r" values="15;40" dur="4s" begin="-2s" repeatCount="indefinite"/><animate attributeName="opacity" values=".85;0" dur="4s" begin="-2s" repeatCount="indefinite"/></circle>
+      <circle cx="1325" cy="440" r="18" stroke="#ff947c"><animate attributeName="r" values="15;40" dur="4s" begin="-3s" repeatCount="indefinite"/><animate attributeName="opacity" values=".85;0" dur="4s" begin="-3s" repeatCount="indefinite"/></circle>
+    </g>
+  </g>
+  <g class="particle">
+    <circle cx="455" cy="310" r="6" fill="#66d7e4"/>
+    <circle cx="965" cy="315" r="6" fill="#ffc56a"/>
+    <circle cx="630" cy="605" r="6" fill="#6cdeb1"/>
+    <circle cx="1325" cy="440" r="6" fill="#ff947c"/>
+  </g>
+</svg>
