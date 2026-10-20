@@ -85,106 +85,6 @@
         </div>
 
         <div class="paper-grid">
-          <article class="paper-card paper-card-featured paper-card-motion">
-            <img src="assets/research/backgrounds/hpc-environment-motion-base.png" alt="Renewable-energy island powering a submerged high-performance computing center">
-
-            <div class="hpc-scene-motion" aria-hidden="true">
-              <span class="water-motion"></span>
-
-              <span class="turbine-rotor" style="--x: 63.4%; --y: 37.4%; --size: 6.6%; --speed: 7.8s;">
-                <span class="rotor-blades"><i></i><i></i><i></i></span>
-              </span>
-              <span class="turbine-rotor" style="--x: 71.7%; --y: 29.6%; --size: 10.6%; --speed: 9.6s;">
-                <span class="rotor-blades"><i></i><i></i><i></i></span>
-              </span>
-              <span class="turbine-rotor" style="--x: 85.6%; --y: 14.8%; --size: 18.2%; --speed: 12.5s;">
-                <span class="rotor-blades"><i></i><i></i><i></i></span>
-              </span>
-              <span class="turbine-rotor" style="--x: 93.6%; --y: 28.7%; --size: 9.5%; --speed: 8.8s;">
-                <span class="rotor-blades"><i></i><i></i><i></i></span>
-              </span>
-
-              <span class="hpc-bubble" style="--x: 55%; --y: 79%; --size: 8px; --duration: 5.6s; --delay: -1.4s; --drift: -16px; --rise: 165px;"></span>
-              <span class="hpc-bubble" style="--x: 59%; --y: 70%; --size: 12px; --duration: 6.4s; --delay: -4.8s; --drift: 18px; --rise: 180px;"></span>
-              <span class="hpc-bubble" style="--x: 63%; --y: 83%; --size: 6px; --duration: 4.9s; --delay: -2.1s; --drift: 12px; --rise: 150px;"></span>
-              <span class="hpc-bubble" style="--x: 66%; --y: 67%; --size: 10px; --duration: 6.8s; --delay: -5.3s; --drift: -20px; --rise: 175px;"></span>
-              <span class="hpc-bubble" style="--x: 69%; --y: 76%; --size: 15px; --duration: 7.2s; --delay: -3.7s; --drift: 24px; --rise: 190px;"></span>
-              <span class="hpc-bubble" style="--x: 72%; --y: 87%; --size: 7px; --duration: 5.2s; --delay: -4.4s; --drift: -12px; --rise: 170px;"></span>
-              <span class="hpc-bubble" style="--x: 75%; --y: 71%; --size: 11px; --duration: 6.1s; --delay: -2.8s; --drift: 16px; --rise: 160px;"></span>
-              <span class="hpc-bubble" style="--x: 78%; --y: 82%; --size: 5px; --duration: 4.6s; --delay: -1.9s; --drift: -10px; --rise: 145px;"></span>
-              <span class="hpc-bubble" style="--x: 81%; --y: 68%; --size: 14px; --duration: 7.4s; --delay: -6.2s; --drift: 22px; --rise: 185px;"></span>
-              <span class="hpc-bubble" style="--x: 84%; --y: 78%; --size: 9px; --duration: 5.8s; --delay: -3.1s; --drift: -18px; --rise: 155px;"></span>
-              <span class="hpc-bubble" style="--x: 87%; --y: 72%; --size: 6px; --duration: 5.1s; --delay: -4.1s; --drift: 12px; --rise: 150px;"></span>
-            </div>
-
-            <div class="paper-copy">
-              <p class="paper-meta">HiMCM 2024 &middot; Outstanding Paper</p>
-              <h3>The Environmental Cost of Computing</h3>
-              <p>A mathematical model of HPC energy demand, 2030 carbon emissions, and the transition toward cleaner computing.</p>
-              <a href="himcm-visualization.html">Read more</a>
-            </div>
-          </article>
-
-          <article class="paper-card paper-card-featured paper-card-drone">
-            <img src="assets/research/backgrounds/urban-drone-wind-clean.png" alt="Aerial view connecting lower-rise Boston and Shenzhen high-rises with visible urban wind currents">
-
-            <div class="drone-scene-motion" aria-hidden="true">
-              <span class="drone-cloud drone-cloud-one"></span>
-              <span class="drone-cloud drone-cloud-two"></span>
-              <span class="drone-cloud drone-cloud-three"></span>
-              <span class="drone-cloud drone-cloud-four"></span>
-
-              <svg class="drone-motion-svg" viewBox="0 0 1672 941" preserveAspectRatio="xMidYMid meet">
-                <defs>
-                  <filter id="route-glow" x="-30%" y="-30%" width="160%" height="160%">
-                    <feGaussianBlur stdDeviation="5" result="blur"></feGaussianBlur>
-                    <feMerge>
-                      <feMergeNode in="blur"></feMergeNode>
-                      <feMergeNode in="SourceGraphic"></feMergeNode>
-                    </feMerge>
-                  </filter>
-                  <filter id="drone-shadow" x="-35%" y="-35%" width="170%" height="170%">
-                    <feDropShadow dx="0" dy="10" stdDeviation="8" flood-color="#00152b" flood-opacity="0.5"></feDropShadow>
-                  </filter>
-                  <linearGradient id="wind-fade" x1="0" x2="1">
-                    <stop offset="0" stop-color="#d6f4ff" stop-opacity="0"></stop>
-                    <stop offset="0.5" stop-color="#d6f4ff" stop-opacity="0.8"></stop>
-                    <stop offset="1" stop-color="#d6f4ff" stop-opacity="0"></stop>
-                  </linearGradient>
-                  <path id="drone-flight-path" d="M 80 500 C 330 520, 540 500, 760 440 S 1100 350, 1450 300"></path>
-                </defs>
-
-                <g class="drone-route-lines">
-                  <use href="#drone-flight-path" class="drone-route-base"></use>
-                  <use href="#drone-flight-path" class="drone-route-flow"></use>
-                </g>
-
-                <g class="drone-wind-lines">
-                  <path d="M 930 338 C 1040 290, 1130 298, 1215 350 S 1390 420, 1550 350" style="--wind-speed: 7.2s;"></path>
-                  <path d="M 895 405 C 1035 350, 1130 380, 1230 430 S 1420 505, 1585 430" style="--wind-speed: 8.6s; --wind-delay: -3.1s;"></path>
-                  <path d="M 1005 505 C 1110 455, 1210 480, 1285 535 S 1430 610, 1570 545" style="--wind-speed: 6.8s; --wind-delay: -1.8s;"></path>
-                </g>
-
-                <g class="drone-runner">
-                  <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.08;0.9;1" dur="13s" repeatCount="indefinite"></animate>
-                  <animateMotion dur="13s" repeatCount="indefinite" rotate="0" keyPoints="0;0.47;1" keyTimes="0;0.55;1" calcMode="spline" keySplines="0.35 0 0.25 1;0.35 0 0.25 1">
-                    <mpath href="#drone-flight-path"></mpath>
-                  </animateMotion>
-                  <image class="drone-flight-sprite" href="assets/research/backgrounds/drone-flight-sprite.png" x="-130" y="-58" width="260" height="117" filter="url(#drone-shadow)"></image>
-                </g>
-              </svg>
-
-              <img class="drone-motion-fallback" src="assets/research/backgrounds/drone-flight-sprite.png" alt="">
-            </div>
-
-            <div class="paper-copy">
-              <p class="paper-meta">Independent research &middot; Differential equations</p>
-              <h3>Modeling Wind Drift in Urban Drone Routes</h3>
-              <p>A comparative model of how Boston and Shenzhen urban form changes drone paths, wind disturbance, and route correction.</p>
-              <a href="drone-wind-visualization.html">Read more</a>
-            </div>
-          </article>
-
           <article class="paper-card paper-card-featured paper-card-road-safety">
             <img src="assets/research/backgrounds/east-asia-road-safety-hero.png" alt="East Asian city highway network with traffic flows and three data-modeling clusters">
 
@@ -302,6 +202,106 @@
               <h3>Modeling Transport Safety Across the Americas</h3>
               <p>A DCRITIC-WASPAS model ranks 35 OAS countries across 15 safety indicators, then uses graph-enhanced K-means to form six comparable peer groups.</p>
               <a href="oas-transport-safety-visualization.html">Read more</a>
+            </div>
+          </article>
+
+          <article class="paper-card paper-card-featured paper-card-motion">
+            <img src="assets/research/backgrounds/hpc-environment-motion-base.png" alt="Renewable-energy island powering a submerged high-performance computing center">
+
+            <div class="hpc-scene-motion" aria-hidden="true">
+              <span class="water-motion"></span>
+
+              <span class="turbine-rotor" style="--x: 63.4%; --y: 37.4%; --size: 6.6%; --speed: 7.8s;">
+                <span class="rotor-blades"><i></i><i></i><i></i></span>
+              </span>
+              <span class="turbine-rotor" style="--x: 71.7%; --y: 29.6%; --size: 10.6%; --speed: 9.6s;">
+                <span class="rotor-blades"><i></i><i></i><i></i></span>
+              </span>
+              <span class="turbine-rotor" style="--x: 85.6%; --y: 14.8%; --size: 18.2%; --speed: 12.5s;">
+                <span class="rotor-blades"><i></i><i></i><i></i></span>
+              </span>
+              <span class="turbine-rotor" style="--x: 93.6%; --y: 28.7%; --size: 9.5%; --speed: 8.8s;">
+                <span class="rotor-blades"><i></i><i></i><i></i></span>
+              </span>
+
+              <span class="hpc-bubble" style="--x: 55%; --y: 79%; --size: 8px; --duration: 5.6s; --delay: -1.4s; --drift: -16px; --rise: 165px;"></span>
+              <span class="hpc-bubble" style="--x: 59%; --y: 70%; --size: 12px; --duration: 6.4s; --delay: -4.8s; --drift: 18px; --rise: 180px;"></span>
+              <span class="hpc-bubble" style="--x: 63%; --y: 83%; --size: 6px; --duration: 4.9s; --delay: -2.1s; --drift: 12px; --rise: 150px;"></span>
+              <span class="hpc-bubble" style="--x: 66%; --y: 67%; --size: 10px; --duration: 6.8s; --delay: -5.3s; --drift: -20px; --rise: 175px;"></span>
+              <span class="hpc-bubble" style="--x: 69%; --y: 76%; --size: 15px; --duration: 7.2s; --delay: -3.7s; --drift: 24px; --rise: 190px;"></span>
+              <span class="hpc-bubble" style="--x: 72%; --y: 87%; --size: 7px; --duration: 5.2s; --delay: -4.4s; --drift: -12px; --rise: 170px;"></span>
+              <span class="hpc-bubble" style="--x: 75%; --y: 71%; --size: 11px; --duration: 6.1s; --delay: -2.8s; --drift: 16px; --rise: 160px;"></span>
+              <span class="hpc-bubble" style="--x: 78%; --y: 82%; --size: 5px; --duration: 4.6s; --delay: -1.9s; --drift: -10px; --rise: 145px;"></span>
+              <span class="hpc-bubble" style="--x: 81%; --y: 68%; --size: 14px; --duration: 7.4s; --delay: -6.2s; --drift: 22px; --rise: 185px;"></span>
+              <span class="hpc-bubble" style="--x: 84%; --y: 78%; --size: 9px; --duration: 5.8s; --delay: -3.1s; --drift: -18px; --rise: 155px;"></span>
+              <span class="hpc-bubble" style="--x: 87%; --y: 72%; --size: 6px; --duration: 5.1s; --delay: -4.1s; --drift: 12px; --rise: 150px;"></span>
+            </div>
+
+            <div class="paper-copy">
+              <p class="paper-meta">HiMCM 2024 &middot; Outstanding Paper</p>
+              <h3>The Environmental Cost of Computing</h3>
+              <p>A mathematical model of HPC energy demand, 2030 carbon emissions, and the transition toward cleaner computing.</p>
+              <a href="himcm-visualization.html">Read more</a>
+            </div>
+          </article>
+
+          <article class="paper-card paper-card-featured paper-card-drone">
+            <img src="assets/research/backgrounds/urban-drone-wind-clean.png" alt="Aerial view connecting lower-rise Boston and Shenzhen high-rises with visible urban wind currents">
+
+            <div class="drone-scene-motion" aria-hidden="true">
+              <span class="drone-cloud drone-cloud-one"></span>
+              <span class="drone-cloud drone-cloud-two"></span>
+              <span class="drone-cloud drone-cloud-three"></span>
+              <span class="drone-cloud drone-cloud-four"></span>
+
+              <svg class="drone-motion-svg" viewBox="0 0 1672 941" preserveAspectRatio="xMidYMid meet">
+                <defs>
+                  <filter id="route-glow" x="-30%" y="-30%" width="160%" height="160%">
+                    <feGaussianBlur stdDeviation="5" result="blur"></feGaussianBlur>
+                    <feMerge>
+                      <feMergeNode in="blur"></feMergeNode>
+                      <feMergeNode in="SourceGraphic"></feMergeNode>
+                    </feMerge>
+                  </filter>
+                  <filter id="drone-shadow" x="-35%" y="-35%" width="170%" height="170%">
+                    <feDropShadow dx="0" dy="10" stdDeviation="8" flood-color="#00152b" flood-opacity="0.5"></feDropShadow>
+                  </filter>
+                  <linearGradient id="wind-fade" x1="0" x2="1">
+                    <stop offset="0" stop-color="#d6f4ff" stop-opacity="0"></stop>
+                    <stop offset="0.5" stop-color="#d6f4ff" stop-opacity="0.8"></stop>
+                    <stop offset="1" stop-color="#d6f4ff" stop-opacity="0"></stop>
+                  </linearGradient>
+                  <path id="drone-flight-path" d="M 80 500 C 330 520, 540 500, 760 440 S 1100 350, 1450 300"></path>
+                </defs>
+
+                <g class="drone-route-lines">
+                  <use href="#drone-flight-path" class="drone-route-base"></use>
+                  <use href="#drone-flight-path" class="drone-route-flow"></use>
+                </g>
+
+                <g class="drone-wind-lines">
+                  <path d="M 930 338 C 1040 290, 1130 298, 1215 350 S 1390 420, 1550 350" style="--wind-speed: 7.2s;"></path>
+                  <path d="M 895 405 C 1035 350, 1130 380, 1230 430 S 1420 505, 1585 430" style="--wind-speed: 8.6s; --wind-delay: -3.1s;"></path>
+                  <path d="M 1005 505 C 1110 455, 1210 480, 1285 535 S 1430 610, 1570 545" style="--wind-speed: 6.8s; --wind-delay: -1.8s;"></path>
+                </g>
+
+                <g class="drone-runner">
+                  <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.08;0.9;1" dur="13s" repeatCount="indefinite"></animate>
+                  <animateMotion dur="13s" repeatCount="indefinite" rotate="0" keyPoints="0;0.47;1" keyTimes="0;0.55;1" calcMode="spline" keySplines="0.35 0 0.25 1;0.35 0 0.25 1">
+                    <mpath href="#drone-flight-path"></mpath>
+                  </animateMotion>
+                  <image class="drone-flight-sprite" href="assets/research/backgrounds/drone-flight-sprite.png" x="-130" y="-58" width="260" height="117" filter="url(#drone-shadow)"></image>
+                </g>
+              </svg>
+
+              <img class="drone-motion-fallback" src="assets/research/backgrounds/drone-flight-sprite.png" alt="">
+            </div>
+
+            <div class="paper-copy">
+              <p class="paper-meta">Independent research &middot; Differential equations</p>
+              <h3>Modeling Wind Drift in Urban Drone Routes</h3>
+              <p>A comparative model of how Boston and Shenzhen urban form changes drone paths, wind disturbance, and route correction.</p>
+              <a href="drone-wind-visualization.html">Read more</a>
             </div>
           </article>
 
