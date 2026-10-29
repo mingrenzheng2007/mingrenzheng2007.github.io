@@ -615,6 +615,10 @@ mark {
   box-shadow: var(--shadow);
 }
 
+.statement img.statement-presentation {
+  object-position: 68% center;
+}
+
 .portal-grid {
   width: min(100% - 56px, var(--max));
   margin: 0 auto 110px;
@@ -6527,10 +6531,11 @@ mark {
   text-align: left;
 }
 
-.game-title > * {
+.game-title-copy {
   width: min(100%, 1140px);
   margin-right: auto;
   margin-left: auto;
+  padding-left: clamp(18px, 4.5vw, 72px);
 }
 
 .game-title .game-eyebrow,
@@ -6554,7 +6559,7 @@ mark {
   letter-spacing: 0;
 }
 
-.game-title > p:not(.game-eyebrow) {
+.game-title-copy > p:not(.game-eyebrow) {
   max-width: 820px;
   margin-bottom: 30px;
   margin-left: 0;
@@ -6852,7 +6857,7 @@ mark {
     padding: 72px 17px 58px;
   }
 
-  .game-title > p:not(.game-eyebrow) {
+  .game-title-copy > p:not(.game-eyebrow) {
     font-size: 18px;
   }
 
