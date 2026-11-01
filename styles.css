@@ -574,7 +574,8 @@ video {
   background: var(--white);
 }
 
-.home-page {
+.home-page,
+.art-page {
   color: var(--white);
   background: #0d2948;
 }
