@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>ALLEN ZHENG | ACADEMIC & RESEARCH</title>
     <meta name="description" content="Urban data, modeling, and research projects by Allen Zheng.">
-    <link rel="stylesheet" href="styles.css?v=20260721-oas-transport-test">
+    <link rel="stylesheet" href="styles.css?v=urban-brain-motion">
     <link rel="stylesheet" href="pso-transport-safety.css">
   </head>
   <body class="academic-page">
@@ -258,8 +258,10 @@
             </div>
           </article>
 
-          <article class="paper-card paper-card-featured" id="urban-brain-development-research">
+          <article class="paper-card paper-card-featured paper-card-motion" id="urban-brain-development-research">
             <img src="assets/research/backgrounds/urban-brain-development-hero.webp" alt="Illustration of a school beside a busy road with a brain network above the neighborhood" loading="lazy" width="1672" height="941">
+            <video class="urban-brain-motion" data-cover-video="assets/research/backgrounds/urban-brain-development-loop.mp4" muted loop playsinline preload="none" aria-hidden="true"></video>
+            <button class="urban-brain-motion-toggle" type="button" data-cover-toggle hidden>Pause motion</button>
             <div class="paper-copy">
               <p class="paper-meta">Literature review &middot; Urban planning</p>
               <h3>Urban Planning and Child Brain Development</h3>
@@ -375,5 +377,6 @@
     </main>
 
     <script src="script.js"></script>
+    <script src="urban-brain-motion.js" defer></script>
   </body>
 </html>
