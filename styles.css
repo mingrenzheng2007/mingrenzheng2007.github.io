@@ -1258,6 +1258,95 @@ mark {
   border-color: var(--white);
 }
 
+.urban-brain-page .himcm-hero {
+  background: var(--navy);
+}
+
+.urban-brain-page .himcm-overlay {
+  background: linear-gradient(to bottom, rgba(3, 15, 31, 0.14) 30%, rgba(3, 15, 31, 0.94) 100%);
+}
+
+.urban-brain-back,
+.urban-brain-chart-note a,
+.urban-brain-sources a {
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+.urban-brain-back {
+  display: inline-block;
+  margin-bottom: 32px;
+  color: var(--blue);
+  font-size: 15px;
+  font-weight: 800;
+}
+
+.urban-brain-chart {
+  max-width: 790px;
+  margin: 0;
+  padding: clamp(20px, 4vw, 34px);
+  background: var(--soft);
+  border: 1px solid #dee4e7;
+  border-radius: 4px;
+}
+
+.urban-brain-chart figcaption {
+  color: var(--navy);
+  font-weight: 800;
+}
+
+.urban-brain-chart-row {
+  margin-top: 20px;
+}
+
+.urban-brain-chart-row p,
+.urban-brain-chart-scale {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin: 0 0 6px;
+}
+
+.urban-brain-chart-row strong {
+  color: var(--navy);
+  white-space: nowrap;
+}
+
+.urban-brain-chart-track {
+  height: 12px;
+  overflow: hidden;
+  background: #dce4e8;
+  border-radius: 6px;
+}
+
+.urban-brain-chart-track span {
+  display: block;
+  height: 100%;
+  background: var(--green);
+  border-radius: inherit;
+}
+
+.urban-brain-chart-scale,
+.urban-brain-chart-note {
+  color: var(--blue);
+  font-size: 14px;
+}
+
+.urban-brain-chart-scale {
+  margin: 6px 0 0;
+}
+
+.urban-brain-chart-note {
+  margin: 20px 0 0;
+}
+
+.urban-brain-sources {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+  padding-left: 24px;
+}
+
 .paper-card-drone > img {
   object-position: center 48%;
 }
